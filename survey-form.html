@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTP trainee Feedback Form</title>
+    <style>
+        #number{
+            width: 160px;
+        }
+        #comments{
+            width: 300px;
+            height: 150px;  
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">Turing Tech Training Form</h1>
+        <p id="description">We hope you are doing well and making steady progress in your learning journey under the Enugu Turing Tech Training Program (ETTP).</p>
+        <p>Your success remains a priority to us. We therefore seek your help to improve the ETTP training program by sharing your feedback</p>
+    </header>
+
+    <main>
+          <form id="survey-form">
+        <div class="form-group">
+            <label id="name-label" for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="number" id="number-label">Phone</label>
+            <input type="number" id="number" name="number" placeholder="Enter your phone number" min="11">
+        </div>
+
+        <div class="form-group">
+            <p><b>1. Which learning track do you enjoy most so far?</b></p>
+            <select id="dropdown" name="track" required>
+                <option disabled selected value>select an option</option>
+                <option value="html">HTML</option>
+                <option value="css">Vanilla CSS</option>
+                <option value="ai">AI/LLM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <p><strong>2. Which instructor's method or style do you enjoy most?</strong></p>
+
+            <label><input type="radio" name="instructor" value="job-orjioke" checked>Dr. Jobon Okafor</label>
+            <label><input type="radio" name="instructor" value="uchenwoke-chimezie" class="input-radio">Professor Chikadibie Okeke</label>
+            <label><input type="radio" name="instructor" value="munachi-ozoemelam">Munagiso Okonkwo</label>
+            <label><input type="radio" name="instructor" value="nwachukwu-victor-njoteh">Nwachineke Okorie</label>
+        </div>
+
+        <div class="form-group">
+            <p><b>3. How do you find the training so far?</b></p>
+
+            <label><input type="radio" name="training" value="interesting">Interesting</label><br>
+            <label><input type="radio" name="training" value="confusing">Confusing</label><br>
+            <label><input type="radio" name="training" value="dull">Dull</label><br>
+            <label><input type="radio" name="training" value="oversimplified">Oversimplified</label><br>
+            <label><input type="radio" name="training" value="undetermined">undetermined</label>
+        </div>
+
+        <div class="form-group">
+            <p><b>4. How was the trainer's pace?</b></p>
+
+            <label><input type="radio" name="pace" value="perfect">Perfect, I was following along</label><br>
+            <label><input type="radio" name="pace" value="too-fast">Too fast, trainer should slow down in the next class</label><br>
+            <label><input type="radio" name="pace" value="too-slow">Too slow, trainer can be faster</label><br>
+            <label><input type="radio" name="pace" value="not-sure">Not sure</label>
+        </div>
+
+        <div class="form-group">
+            <p><b>5. How clear are the explanations so far?</b></p>
+
+            <label><input type="radio" name="clarity" value="very-clear">Very clear, I understand all being taught</label><br>
+            <label><input type="radio" name="clarity" value="some-clear">Sometimes clear, sometimes confusing</label><br>
+            <label><input type="radio" name="clarity" vlaue="not-clear">Not clear, I'm struggling</label>
+        </div>
+
+        <div class="form-group">
+            <p><b>6. How's your learning environment?</b></p>
+
+            <label><input type="radio" name="environment" value="good">Good laptop + stable internet, no issues</label><br>
+            <label><input type="radio" name="environment" value="fair">Minor issues but I'm managing</label><br>
+            <label><input type="radio" name="environment" value="bad">Serious issues(internet, power, laptop or setup)</label><br>
+            <label><input type="radio" name="environment" value="others">Other issues</label>
+        </div>
+
+        <div class="form-group">
+            <p>
+                <b>
+                    7. What other courses would you like to be added to the curriculum if possible (Select all that apply):
+                </b>
+            </p>
+            <label>
+                <input name="courses" type="checkbox" value="project-mgt" >Project management
+            </label>
+            <br>
+            <label>
+                <input name="courses" type="checkbox" value="data-analysis" >Data Analysis & Algorithm
+            </label>
+            <br>
+            <label>
+                <input name="courses" type="checkbox" value="python">Advanced Python
+            </label>
+            <br>
+            <label>
+                <input name="courses" type="checkbox" value="cybersecurity">Cyber Security
+            </label>
+            <br>
+            <label>
+                <input name="courses" type="checkbox" value="prompt-engineering" >Prompt Engineering
+            </label>
+            <br>
+            <label>
+                <input name="courses" type="checkbox" value="PHP" >PHP
+            </label>
+             
+        </div>
+
+        <div class="form-group">
+            <p><b>8. What is one thing Turing Tech can improve right now to ensure the best learning experience?</b></p>
+
+            <textarea id="comments" name="comment" placeholder="Enter your suggestions here..."></textarea>
+        </div>
+        <button type="submit" id="submit">Submit Feedback</button>
+          </form>
+    </main>
+
+    <footer>
+          <p><small>&copy;This survey form was built as part of FreeCodeCamp HTML course exercise (2026)</small></p>            
+    </footer>
+
+</body>
+</html>
