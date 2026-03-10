@@ -6,7 +6,7 @@ Welcome to my main development repository. This space serves as a comprehensive 
 
 | Project Name | Stack | Description | Status |
 | :--- | :--- | :--- | :--- |
-| **[Semantic HTML Gov Portal](./semantic-html-gov-portal)** | HTML5 | A government services portal focused on accessibility and document structure. | ✅ Completed |
+| **[Semantic HTML Gov Portal](./project_4_gov_portal.html)** | HTML5 | A government services portal focused on accessibility and document structure. | ✅ Completed |
 | *Upcoming Project* | CSS/Flexbox | Vanilla CSS, Tailwind... | 🏗️ In Progress |
 
 ---
