@@ -1,0 +1,84 @@
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.box {
+  max-height: 120px;
+  color: #000;
+  border: 1px solid #000;
+  display: flex;
+
+  /*The flex property controls the size and behavior of the items inside a flexible container. It is composed by three properties: flex-grow, flex-shrink, and flex-basis.*/
+
+  flex: 1 1 100px;
+
+  /*This will make each box start at 100px, allowing them to grow to fill available space, or shrink when needed.*/
+
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  font-weight: bold;
+
+  /*The font-size property specifies the size of the text.*/
+  font-size: 1.125rem;
+  /*The font-size value uses rem units, which are relative to the root html element, not the parent element. This means the font size stays consistent and isn't affected by parent element sizes, making it more predictable for layouts.*/
+
+  border-radius: 5px;
+
+  /*The order property specifies the order of a flex item relative to other flex items inside the same container. By default, all flex items have an order value of 0, meaning they appear in the order they're written in the HTML.*/
+  order: 0;
+  /*Items with lower order values appear first, while items with higher values appear last.*/
+}
+
+.flex-container {
+  display: flex;
+
+  /*The flex-wrap property defines whether flex items are forced onto one line or can wrap onto multiple lines.*/
+  flex-wrap: wrap;  
+  /*By default, flex items have a value of nowrap, meaning they stay on a single line even if they overflow the container. The wrap value instead makes flex items wrap onto new lines when they don't fit in the container's width, creating a more flexible, responsive layout.*/
+
+  width: 70%;
+  height: 600px;
+  /*Defining width and height properties will set the amount of width and height the div takes from its parent element, in this case the body element*/
+  
+  padding: 10px;
+  margin: 20px auto;
+  /*padding adds space inside the element (between the border and content), while margin adds space outside the element (between the border and other elements).*/
+  
+  align-content: space-evenly;
+  /*The align-content property controls the arrangement of items along the cross axis. While the default value of align-content is stretch, the most relevant options you can use for align-content are: space-between, start, center, end, space-around and space-evenly.*/
+}
+
+.box1 {
+  background: red;
+  order: 1; 
+  flex-grow: 1;
+}
+
+.box2 {
+  background: orange;
+  order: 0; 
+}
+
+.box3 {
+  background: yellow;
+  order: 2;
+  flex-shrink: 3; 
+}
+
+.box4 {
+  background: green;
+  order: 3; 
+}
+
+.box5 {
+  background: blue;
+  order: 4;
+}
+
+.box6{
+  background: indigo;
+  order: 5;
+  flex-grow: 1;
+}
