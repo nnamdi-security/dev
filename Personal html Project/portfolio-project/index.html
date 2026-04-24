@@ -14,34 +14,40 @@
 <body>
     <header class="navbar">
        <div class="nav-container">
-        <a href="#index.html" class="nav-logo">
-            <img class="logo"
-                 src="images/Peter Ileh-logo.png"
-                 alt="Peter Ileh-logo"
-                 width="100"
-            >
-        </a>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-       </div> 
+            <a href="#hero" class="nav-logo">
+                <img class="logo"
+                    src="images/Peter Ileh-logo.png"
+                    alt="Peter Ileh-logo"
+                    width="100"
+                >
+            </a>
+            <nav class="nav-links">
+             <div class="flex-container">
+                <div class="flex-item"><a href="#hero">Home</a></div>
+                <div class="flex-item"><a href="#about">About</a></div>
+                <div class="flex-item"><a href="#skills">Skills</a></div>
+                <div class="flex-item"><a href="#projects">Projects</a></div>
+                <div class="flex-item"><a href="#contact">Contact</a></div>
+              </div>
+            </nav>
+        </div> 
     </header>
     <main>
         <section id="hero">
-            <h1 class="hero-title">PETER NNAMDI ILEH</h1>
-            <P class="hero-subtitle">Aspiring DevSecOps Engineer</P>
-            <img class="photo"
-                 src="./images/Professional Photo_me.jpg"
-                 alt="professional photo of Peter Ileh"
-                 loading="eager"
-                 width="400"
-            >
+            <div class="hero-flex">
+                <div>
+                    <h1 class="hero-title">PETER NNAMDI ILEH</h1>
+                    <P class="hero-subtitle">Aspiring DevSecOps Engineer</P>
+                </div>
+                <div>
+                    <img class="photo"
+                    src="./images/Professional Photo_me.jpg"
+                    alt="professional photo of Peter Ileh"
+                    loading="eager">
+                </div>
+            </div>
             <button class="call-to-act">
-                <a href="projects.html">View My Work</a>
+                <a href="#projects">View My Work</a>
             </button>
         </section>
 
@@ -141,7 +147,7 @@
             </div>
         </section>
 
-        <section id="project">
+        <section id="projects">
             <h2>What I've Built</h2>
             <div class="project-grid">
 
