@@ -90,19 +90,20 @@ section h2::after {
   width: 80px;
   object-fit: contain;
   transition: opacity 0.3s ease;
+  height: 70px;
 }
 
 .nav-logo .logo:hover {
   opacity: 0.8;
 }
 
-.nav-links .flex-container {
+.nav-links {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.nav-links .flex-item a {
+.nav-links a {
   font-family: 'Raleway', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -161,6 +162,7 @@ section h2::after {
   color: #ffffff;
   line-height: 1;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .hero-subtitle {
@@ -170,6 +172,7 @@ section h2::after {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 #hero .photo {
@@ -181,11 +184,12 @@ section h2::after {
   box-shadow: 0 0 24px rgba(230, 57, 70, 0.25), 0 0 0 8px rgba(230, 57, 70, 0.08);
   flex-shrink: 0;
   animation: float 6s ease-in-out infinite;
+  margin: 0 auto;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-14px); }
+  50%       { transform: translateY(-10px); }
 }
 
 .call-to-act {
@@ -218,7 +222,7 @@ section h2::after {
 }
 
 .call-to-act:hover {
-  background: #b02d38;
+  background: #4dec0e;
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(230, 57, 70, 0.5);
 }
@@ -475,7 +479,7 @@ ul.tool li::before {
 
 .overlay a:hover,
 .btn:hover {
-  background: #b02d38;
+  background: #08851d;
 }
 
 .project-info {
@@ -602,8 +606,8 @@ form button[type="submit"]:hover {
 
 .social-link a:hover {
   background: #e63946;
-  border-color: #e63946;
-  color: #ffffff;
+  border-color: #397ee6;
+  color: #0a19e2;
   transform: translateY(-3px);
 }
 
