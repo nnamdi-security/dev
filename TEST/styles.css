@@ -47,8 +47,23 @@
     border: solid 1px red;
     border-radius: 50%;
     align-content: center;
-
-}
-h1{
     text-align: center;
 }
+
+.box2{
+    border: solid 1px green;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
+@keyframes color-change {
+    0%  {background-color: red;}
+    50% {background-color: blue;}
+    100%{background-color: green;}
+}
+
+
