@@ -90,19 +90,20 @@ section h2::after {
   width: 80px;
   object-fit: contain;
   transition: opacity 0.3s ease;
+  height: 70px;
 }
 
 .nav-logo .logo:hover {
   opacity: 0.8;
 }
 
-.nav-links .flex-container {
+.nav-links {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.nav-links .flex-item a {
+.nav-links a {
   font-family: 'Raleway', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -161,6 +162,7 @@ section h2::after {
   color: #ffffff;
   line-height: 1;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .hero-subtitle {
@@ -170,6 +172,7 @@ section h2::after {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 #hero .photo {
@@ -181,11 +184,12 @@ section h2::after {
   box-shadow: 0 0 24px rgba(230, 57, 70, 0.25), 0 0 0 8px rgba(230, 57, 70, 0.08);
   flex-shrink: 0;
   animation: float 6s ease-in-out infinite;
+  margin: 0 auto;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-14px); }
+  50%       { transform: translateY(-10px); }
 }
 
 .call-to-act {
@@ -218,16 +222,11 @@ section h2::after {
 }
 
 .call-to-act:hover {
-  background: #b02d38;
+  background: #4dec0e;
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(230, 57, 70, 0.5);
 }
 
-<<<<<<< HEAD
-/* ── About Section ────────────────────────────────────────── */
-=======
-
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #about {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -304,11 +303,6 @@ ul.tool li::before {
   display: none;
 }
 
-<<<<<<< HEAD
-/* ── Skills Section ───────────────────────────────────────── */
-=======
-
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #skills {
   max-width: 1280px;
   margin: 0 auto;
@@ -383,11 +377,6 @@ ul.tool li::before {
   margin-right: 4px;
 }
 
-<<<<<<< HEAD
-/* ── Projects Section ─────────────────────────────────────── */
-=======
-
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #project {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -487,7 +476,7 @@ ul.tool li::before {
 
 .overlay a:hover,
 .btn:hover {
-  background: #b02d38;
+  background: #08851d;
 }
 
 .project-info {
@@ -506,11 +495,7 @@ ul.tool li::before {
   line-height: 1.7;
 }
 
-<<<<<<< HEAD
-/* ── Contact Section ──────────────────────────────────────── */
-=======
 /* Contact Section */
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #contact {
   max-width: 1280px;
   margin: 0 auto;
@@ -618,16 +603,11 @@ form button[type="submit"]:hover {
 
 .social-link a:hover {
   background: #e63946;
-  border-color: #e63946;
-  color: #ffffff;
+  border-color: #397ee6;
+  color: #0a19e2;
   transform: translateY(-3px);
 }
 
-<<<<<<< HEAD
-/* ── Footer ───────────────────────────────────────────────── */
-=======
-
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 footer {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -665,13 +645,8 @@ footer a:hover {
   color: #ffffff;
 }
 
-<<<<<<< HEAD
-/* ── Responsive — Tablet (768px – 1023px) ─────────────────── */
-@media (max-width: 1023px) {
-=======
 
 @media screen and (max-width: 1023px) {
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
   section {
     padding: 80px 6vw;
   }
@@ -714,13 +689,8 @@ footer a:hover {
   }
 }
 
-<<<<<<< HEAD
-/* ── Responsive — Mobile (320px – 767px) ──────────────────── */
-@media (max-width: 767px) {
-=======
 
 @media screen and (max-width: 767px) {
->>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
   section {
     padding: 64px 5vw;
   }
