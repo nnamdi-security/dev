@@ -66,7 +66,6 @@ section h2::after {
   border-radius: 2px;
 }
 
-
 .navbar {
   position: sticky;
   top: 0;
@@ -224,7 +223,11 @@ section h2::after {
   box-shadow: 0 8px 28px rgba(230, 57, 70, 0.5);
 }
 
+<<<<<<< HEAD
 /* ── About Section ────────────────────────────────────────── */
+=======
+
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #about {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -301,7 +304,11 @@ ul.tool li::before {
   display: none;
 }
 
+<<<<<<< HEAD
 /* ── Skills Section ───────────────────────────────────────── */
+=======
+
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #skills {
   max-width: 1280px;
   margin: 0 auto;
@@ -376,7 +383,11 @@ ul.tool li::before {
   margin-right: 4px;
 }
 
+<<<<<<< HEAD
 /* ── Projects Section ─────────────────────────────────────── */
+=======
+
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #project {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -495,7 +506,11 @@ ul.tool li::before {
   line-height: 1.7;
 }
 
+<<<<<<< HEAD
 /* ── Contact Section ──────────────────────────────────────── */
+=======
+/* Contact Section */
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 #contact {
   max-width: 1280px;
   margin: 0 auto;
@@ -608,7 +623,11 @@ form button[type="submit"]:hover {
   transform: translateY(-3px);
 }
 
+<<<<<<< HEAD
 /* ── Footer ───────────────────────────────────────────────── */
+=======
+
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
 footer {
   background: #111520;
   border-top: 1px solid #1e2538;
@@ -646,8 +665,13 @@ footer a:hover {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 /* ── Responsive — Tablet (768px – 1023px) ─────────────────── */
 @media (max-width: 1023px) {
+=======
+
+@media screen and (max-width: 1023px) {
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
   section {
     padding: 80px 6vw;
   }
@@ -690,8 +714,13 @@ footer a:hover {
   }
 }
 
+<<<<<<< HEAD
 /* ── Responsive — Mobile (320px – 767px) ──────────────────── */
 @media (max-width: 767px) {
+=======
+
+@media screen and (max-width: 767px) {
+>>>>>>> e0c060d9954aab02fd855d43d696918e996feb01
   section {
     padding: 64px 5vw;
   }
