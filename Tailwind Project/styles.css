@@ -1,0 +1,23 @@
+/* Navigation with logo on the left and links on the right */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Equal width cards */
+.card {
+    flex: 1 1 300px;
+    min-width: 0;      /* This prevent overflow */
+}
+
+/* Sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+}
