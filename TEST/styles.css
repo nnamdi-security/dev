@@ -106,3 +106,27 @@ animation: color-change 5s linear 1s infinite alternate forwards;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     background-color: aqua;
 }
+
+.box4{
+    width: 200px;
+    height: 200px;
+    border: solid 1px blue;
+    margin-top: 10px;
+    transition: all 3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* bounce */
+}
+.box4:hover{
+    transform: translate(50px, -20px);
+}
+
+.box5{
+    width: 200px;
+    height: 200px;
+    border: solid 2px yellow;
+    margin-top: 10px;
+    animation: fadeIn 0.9s ease 2s forwards;
+    background-color: gray;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(90px);}
+    to   {opacity: 1; transform: translateY(0);}
+}

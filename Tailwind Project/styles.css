@@ -21,3 +21,28 @@ body {
 main{
     flex: 1;
 }
+
+/* Mobile first approach */
+body {
+    padding: 1rem;
+}
+/* Tablet */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 2rem;
+        max-width: 720px;
+    }
+}
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1280) {
+    body {
+        max-width: 1200px;
+    }
+}
