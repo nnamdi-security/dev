@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!--Character Encoding-->
 	<meta charset="UTF-8">
+
+	<!--Reesponsive viewport-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--SEO-->
 	<title>HTML PRACTICE</title>
+	<meta name="--Description" content="Page Title">
+	<meta name="robots" content="index, follow">
+
+	<!--Open Graph (controls how link appears in social media)-->
+	<meta property="og:title" content="Page Title">
+	<meta property="og:description" content="Description for social">
+	<meta property="og:image" content="https://example.com/image.png">
 </head>
 <body>
 	<header>
@@ -106,8 +118,25 @@
 		</section>
 
 		<article>
-			<h2>Tailwind Projects</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae tenetur voluptatum asperiores dolores delectus vero quisquam? Fugiat, nostrum laboriosam?</p>
+			<div>
+				<h2>HTML5 Media Elements</h2>
+				<h4>Video Element</h4>
+				<p>This is video for the Bip-60 challenge posted on YouTube</p>
+				<video controls width="640" height="360" poster="" loop muted autoplay>
+				   <source src="" type="video/mp4">
+				   <source src=".webm" type="video/webm">
+				   <track src="captions.vtt" kind="captions" srclang="en" label="English">
+				   Your browswer doesn't support video
+				</video>
+			</div>
+			<div>
+				<h4>Audio Element</h4>
+				<audio controls muted loop autoplay>
+					<source src="" type="audio/mpeg">
+					<source src="" type="audio/ ogg">
+					Your browswer doesn't support audio
+				</audio>
+			</div>
 		</article>
 
 		<aside>
@@ -178,7 +207,7 @@
 
 			<label for="password">Password (8+ characters):</label>
 			<input type="password" id="password" name="password" placeholder="********" required minlength="8" aria-describedby="pwd-help">
-			<small id="pwd-help">Must be 8 characters long</small>
+			<small id="pwd-help">Must be at least 8 characters</small>
 			</fieldset>
 
 			<fieldset>
