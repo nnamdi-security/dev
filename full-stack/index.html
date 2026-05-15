@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML PRACTICE</title>
 </head>
 <body>
-    
-<!--News article challenge-->
-<h1>Humans have reached Mars</h1>
-<h3>The starship rocket successfully landed on the red planet this morning</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta nostrum repellendus quisquam reprehenderit similique voluptatem quod, ea ducimus distinctio at?</p>
-<img src="">
+	<form action="/submit" method="post">
+		<fieldset>
+		  <legend>Personal information</legend>
+		  
+		  <label for="name">Full name</label>
+		  <input type="text" id="name" name="name" placeholder="enter full name" required autocomplete="name" area-describedby="name-help">
+		  <small id="name-help">Enter your full legal name</small><br>
 
+		  <label for="dob">Date of Birth</label>
+		  <input type="date" name="dob" value="DD-MM-YYYY" min="01-01-2026" max="01-01-1970"><br>
+
+		  <label for="age">Age (18+):</label>
+		  <input type="number" id="age" name="age" min="18" max="65" required>
+
+		  <label><input type="radio" name="gender" value="male">Male</label>
+		  <label><input type="radio" name="gender" value="female">Female</label><br>
+
+		  <select name="title">
+		    <option value="">select a title</option>
+		    <option value="Mr">Mr.</option>
+		    <option value="Ms">Ms.</option>
+		    <option vlaue="Dr">Dr.</option>
+		  </select>	<br>
+		  
+		</fieldset>
+
+		<fieldset>
+		  <legend>Contact Details</legend>
+		  
+		  <label for="email">Email address</label>
+		  <input type="email" id="email" name="email" required placeholder="email@example.com" autocomplete="email"><br>
+		
+		  <label for="phone">Phone Number</label>
+		  <input type="tel" name="phone" id="phone" placeholder="+234 123 456 7890" required><br>
+
+		  <label for="address">Home address</label>
+		  <input type="text" id="text" name="address" placeholder="your current home address" required>		  
+
+		  <p>Preferred Contact Method</p>
+		  <label><input type="checkbox" name="contact-method" value="email">Email</label>
+		  <label><input type="checkbox" name="contact-method" value="sms">SMS</label>
+		  <label><input type="checkbox" name="contact-method" value="phone">Phone</label>
+		
+		</fieldset>
+
+		<fieldset>
+		  <legend>Account Credentials</legend>
+
+		  <label for="username">Username (3-20 characters):</label>
+		  <input type="text" id="username" name="username" required minlength="3" maxlength="20"><br>
+
+		  <label for="password">Password (8+ characters):</label>
+		  <input type="password" id="password" name="password" placeholder="********" required minlength="8">
+		</fieldset>
+
+		
+	</form>
 </body>
 </html>
