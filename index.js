@@ -31,7 +31,6 @@ for (const fruit of fruits) {
 }
 
 const person = {name: 'Amara', age: 25};
-for
 //const student ={
   //  name: 'Amara',
    // age: 22,
