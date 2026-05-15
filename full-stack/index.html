@@ -6,62 +6,197 @@
 	<title>HTML PRACTICE</title>
 </head>
 <body>
-	<form action="/submit" method="post">
-		<fieldset>
-		  <legend>Personal information</legend>
-		  
-		  <label for="name">Full name</label>
-		  <input type="text" id="name" name="name" placeholder="enter full name" required autocomplete="name" area-describedby="name-help">
-		  <small id="name-help">Enter your full legal name</small><br>
+	<header>
+		<h1>Semantic HTML</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">About</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="hero">
+			<h2>The Semantic HTML & Accessibility</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid voluptatibus ab voluptate eos animi temporibus culpa voluptates obcaecati tenetur.</p>
+		</section>
 
-		  <label for="dob">Date of Birth</label>
-		  <input type="date" name="dob" value="DD-MM-YYYY" min="01-01-2026" max="01-01-1970"><br>
+		<section id="about">
+			<h2>About Us</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nulla ullam iste quos mollitia sit eligendi dolores, nemo voluptas. Velit ipsum tempora animi nemo repudiandae ad, est incidunt, quidem quos accusamus blanditiis quod aut maxime impedit temporibus! Excepturi culpa consequuntur atque porro odit maxime, architecto possimus saepe asperiores molestiae. Doloribus similique praesentium perspiciatis, quisquam qui corporis sit temporibus deserunt voluptas? Totam explicabo excepturi ullam ipsam provident maiores, nisi omnis aspernatur quibusdam temporibus itaque incidunt voluptates sequi nesciunt accusamus consectetur deserunt, numquam quod consequuntur et labore repellendus nam cupiditate vel. Laborum dolor, repellendus hic nam obcaecati voluptatum numquam veniam labore at quia odit reprehenderit aliquam neque ipsum fugiat perspiciatis voluptate omnis sapiente ratione inventore eos. Ad voluptas, quidem natus ducimus expedita velit, aperiam illo eaque beatae delectus aliquam iure atque distinctio obcaecati, cumque quis ipsum reprehenderit nostrum quisquam? Laborum inventore quam odio fuga reprehenderit quos incidunt accusantium doloremque dolor voluptates, ut molestiae officiis provident non atque natus ad omnis cum ullam itaque! Sunt, aperiam! Laborum, mollitia eaque sequi adipisci officia amet qui ut beatae minima similique vero nobis facere dolorum iusto vitae fugiat consectetur voluptatum, dicta dolorem ipsa. Aliquid dolores ab eveniet deserunt esse enim, impedit, explicabo veniam iusto voluptas omnis!</p>
+			<div>
+				<h4>Courses Offered</h4>
+				<ul>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+			    </ul>
+				<!--Ordered List-->
+				<ol>
+					<li>first step</li>
+					<li>Second step</li>
+					<li>Third step</li>
+				</ol>
 
-		  <label for="age">Age (18+):</label>
-		  <input type="number" id="age" name="age" min="18" max="65" required>
+				<!--Description List-->
+				<dl>
+					<dt>HTML</dt>
+					<dd>Markup language for structure</dd>
 
-		  <label><input type="radio" name="gender" value="male">Male</label>
-		  <label><input type="radio" name="gender" value="female">Female</label><br>
+					<dt>CSS</dt>
+					<dd>stylesheet language for design</dd>
 
-		  <select name="title">
-		    <option value="">select a title</option>
-		    <option value="Mr">Mr.</option>
-		    <option value="Ms">Ms.</option>
-		    <option vlaue="Dr">Dr.</option>
-		  </select>	<br>
-		  
-		</fieldset>
+					<dt>JavaScript</dt>
+					<dd>progrmming language for web interactivity</dd>
+				</dl>
+			</div>
+			<table>
+				<caption>Course Completion Rates</caption>
 
-		<fieldset>
-		  <legend>Contact Details</legend>
-		  
-		  <label for="email">Email address</label>
-		  <input type="email" id="email" name="email" required placeholder="email@example.com" autocomplete="email"><br>
-		
-		  <label for="phone">Phone Number</label>
-		  <input type="tel" name="phone" id="phone" placeholder="+234 123 456 7890" required><br>
+				<thead>
+					<tr>
+						<th scope="col">Course</th>
+						<th scope="col">Students</th>
+						<th scope="col">Completion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>HTML</td>
+						<td>150</td>
+						<td>85%</td>
+					</tr>
+					<tr>
+						<td>CSS</td>
+						<td>140</td>
+						<td>89%</td>
+					</tr>
+					<tr>
+						<td>JavaScript</td>
+						<td>88</td>
+						<td>47%</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 
-		  <label for="address">Home address</label>
-		  <input type="text" id="text" name="address" placeholder="your current home address" required>		  
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempore voluptatibus illo dolor placeat aspernatur non aliquid omnis cum fugiat.
+			</p>
+			<img src="https://www.freepik.com/free-photos-vectors/html-website"
+				 alt="photo of html icon"
+				 width="400" height="200">	
+			>
+			<!--Figure with caption-->
+			<figure>
+				<img src=""
+			</figure>
+		</section>
 
-		  <p>Preferred Contact Method</p>
-		  <label><input type="checkbox" name="contact-method" value="email">Email</label>
-		  <label><input type="checkbox" name="contact-method" value="sms">SMS</label>
-		  <label><input type="checkbox" name="contact-method" value="phone">Phone</label>
-		
-		</fieldset>
+		<article>
+			<h2>Tailwind Projects</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae tenetur voluptatum asperiores dolores delectus vero quisquam? Fugiat, nostrum laboriosam?</p>
+		</article>
 
-		<fieldset>
-		  <legend>Account Credentials</legend>
+		<aside>
+			<h3>Upcoming AI annotation project</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod quos enim quasi labore ut voluptate culpa alias beatae repudiandae?</p>
+		</aside>
 
-		  <label for="username">Username (3-20 characters):</label>
-		  <input type="text" id="username" name="username" required minlength="3" maxlength="20"><br>
+		<form action="/submit" method="post">
+			<fieldset>
+			<legend>Personal information</legend>
+			
+			<label for="name">Full name</label>
+			<input type="text" id="name" name="name" placeholder="enter full name" required autocomplete="name" area-describedby="name-help">
+			<small id="name-help">Enter your full legal name</small><br><br>
 
-		  <label for="password">Password (8+ characters):</label>
-		  <input type="password" id="password" name="password" placeholder="********" required minlength="8">
-		</fieldset>
+			<label for="dob">Date of Birth</label>
+			<input type="date" name="dob" value="DD-MM-YYYY" min="01-01-2026" max="01-01-1970"><br><br>
 
-		
-	</form>
+			<label for="age">Age (18+):</label>
+			<input type="number" id="age" name="age" min="18" max="65" required><br><br>
+
+			<label><input type="radio" name="gender" value="male">Male</label>
+			<label><input type="radio" name="gender" value="female">Female</label><br><br>
+
+			<select name="title">
+				<option value="">select a title</option>
+				<option value="Mr.">Mr.</option>
+				<option value="Ms.">Ms.</option>
+				<option vlaue="Dr.">Dr.</option>
+			</select>	<br>
+			
+			</fieldset>
+
+			<fieldset>
+			<legend>Contact Details</legend>
+			
+			<label for="email">Email address</label>
+			<input type="email" id="email" name="email" required placeholder="email@example.com" autocomplete="email"><br><br>
+			
+			<label for="phone">Phone Number</label>
+			<input type="tel" name="phone" id="phone" placeholder="+234 123 456 7890" required autocomplete="tel"><br><br>
+
+			<label for="address">Home address</label>
+			<input type="text" id="text" name="address" placeholder="your current home address" required><br><br>
+			
+			<label for="country">Country</label>
+			<input type="text" id="country" name="country" list="countries" placeholder="select your country">
+			<datalist id="countries">
+				<option value="Nigeria">
+				<option value="Kenya">
+				<option value="South Africa">
+				<option value="Ghana">
+				<option value="Egypt">
+			</datalist><br><br>
+
+			<p>Preferred Contact Method</p>
+			<label><input type="checkbox" name="contact-method" value="email">Email</label>
+			<label><input type="checkbox" name="contact-method" value="sms">SMS</label>
+			<label><input type="checkbox" name="contact-method" value="phone">Phone</label>
+			
+			</fieldset>
+
+			<fieldset>
+			<legend>Account Credentials</legend>
+
+			<label for="username">Username (3-20 characters):</label>
+			<input type="text" id="username" name="username" required minlength="3" maxlength="20"><br><br>
+
+			<label for="password">Password (8+ characters):</label>
+			<input type="password" id="password" name="password" placeholder="********" required minlength="8">
+			</fieldset>
+
+			<fieldset>
+				<legend>Other Details</legend>
+
+				<label>Course Progress</label>
+				<progress value="70" max="100">70%</progress><br><br>
+
+				<label>Disk Usage</label>
+				<meter value="0.7" min="0" max="1" low="0.3" high="0.8" optimum="0.5">70%</meter><br><br>
+
+				<label for="search">Input your search</label>
+				<input type="search" id="search" name="search" placeholder="search..."><br><br>
+
+				<label for="url">Your website URL</label>
+				<input type="url" id="url" name="url" placeholder="https://..."><br><br>
+
+				<label for="file">Up your photo</label>
+				<input type="file" name="file" id="file" accept="image/*"><br><br>
+
+				
+				<textarea name="message" rows="4" placeholder="insert your comment..."></textarea><br><br>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+	    </form>
+	</main>
+	<footer>
+		<p>&copy; 2026 HackathonAfrica LMS. Part of AfricaPlan Foundation </p>
+	</footer>
 </body>
 </html>
