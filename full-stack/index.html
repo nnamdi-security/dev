@@ -85,14 +85,24 @@
 			<h2>Contact Us</h2>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempore voluptatibus illo dolor placeat aspernatur non aliquid omnis cum fugiat.
 			</p>
-			<img src="https://www.freepik.com/free-photos-vectors/html-website"
+			<img src="./html.avif"
 				 alt="photo of html icon"
-				 width="400" height="200">	
+				 width="400" height="200"
+				 loading="lazy"	
+				 
 			>
 			<!--Figure with caption-->
 			<figure>
-				<img src=""
+				<img src="./html2.jfif" alt="photo of html" width="400" height="200" loading="lazy">
+				<figcaption>A beautiful design of HTML</figcaption>
 			</figure>
+
+			<!--Different images for different screens-->
+			<picture>
+				<source media="(min-width: 1024px)" srcset="./jonatan-pie-3l3RwQdHRHg-unsplash.jpg">
+				<source media="(min-width: 768px)" srcset="./john-towner-3Kv48NS4WUU-unsplash.jpg">
+				<source media="(min-width: 480)" srcset="./jeremy-bishop-EwKXn5CapA4-unsplash.jpg">
+			</picture>
 		</section>
 
 		<article>
