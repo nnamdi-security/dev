@@ -16,6 +16,11 @@
 	<meta property="og:title" content="Page Title">
 	<meta property="og:description" content="Description for social">
 	<meta property="og:image" content="https://example.com/image.png">
+	<meta property="og:url" content="https://example.com">
+
+	<!--Twitter Card-->
+	<meta name="twitter:card" content="summary-large-image">
+	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 	<header>
@@ -118,7 +123,7 @@
 		</section>
 
 		<article>
-			<div>
+			<div class="media">
 				<h2>HTML5 Media Elements</h2>
 				<h4>Video Element</h4>
 				<p>This is video for the Bip-60 challenge posted on YouTube</p>
@@ -129,7 +134,7 @@
 				   Your browswer doesn't support video
 				</video>
 			</div>
-			<div>
+			<div class="media">
 				<h4>Audio Element</h4>
 				<audio controls muted loop autoplay>
 					<source src="" type="audio/mpeg">
@@ -232,6 +237,18 @@
 				<textarea name="message" rows="4" placeholder="insert your comment..."></textarea><br><br>
 				
 				<button type="submit">Submit</button>
+			</fieldset>
+
+			<fieldset>
+				<legend> Contact Us</legend>
+
+				<a href="mailto:petersaint515@gmail.com">Email Us</a>
+
+				<!--Email with Subject-->
+				<a href="mailto:petersaint515@gmail.com?subject=Question">Ask a Question</a>
+
+				<!--Phone link(Great for Mobile)-->
+				<a href="tel:+2348132961402">Call Us</a>
 			</fieldset>
 	    </form>
 	</main>

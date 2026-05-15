@@ -1,0 +1,32 @@
+*, *::after *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Descendant (space) - any nested */
+nav a{
+    color: rgb(3, 20, 129);
+}
+
+/* Child (>) - direct children only */
+ul > li{
+    margin: 10px;
+}
+
+/* Adjacent sibling (+) - immediately after */
+h2 + p{
+    margin-top: 0;
+    background-color: aqua;
+}
+
+/* General sibling (~) - any sibling after */
+h2 ~ p{
+    color: blue;
+}
+
+fieldset  a{
+    display: block;
+}
+
+[type="eamil"]{ color: blue;}
