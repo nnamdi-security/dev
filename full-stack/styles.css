@@ -83,10 +83,19 @@ Backgrounds
 ====================================================
 */
 #hero{
-    background-color: #0a0c10;
-    background-image: url(./hero.jpg);
-    background-size: cover;
+    /*background-color: #0a0c10;
+    background-image: url(./images/pexels-pat-whelen-2913248-8650941.jpg);
+    background-size:cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;*/
+
+     /* Shorthand */
+    /*background: #0A0A0A url('bg.jpg') center/cover no-repeat fixed;*/
+
+    /*Gradient*/
+    background: linear-gradient(right, #00ff66, #0066FF);
+    background: radial-gradient(circle, #00FF66, transparent);
 }
 .nav-links{
     display: flex;
@@ -115,7 +124,24 @@ img{
 }
 
 
+/*
+====================================================
+Pseudo-classes and Pseudo-elements
+====================================================
+*/
 
+/* Interactive states */
+a:hover{color: darkred;}
+a:active{color:aqua;}
+button:focus{outline: 2px solid #00FF66;}
+input:disabled{opacity: 0.5;}
+
+/* Structural */
+li:first-child{font-weight: bold;}
+li:last-child{border: solid 1px red;}
+tr:nth-child(even){background: #0066FF;}
+tr:nth-child(odd){background: #00FF66;}
+p:nth-of-type(2){color: brown;}
 
 
 
