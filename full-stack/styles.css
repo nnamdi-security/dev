@@ -1,8 +1,16 @@
-*, *::after *::before{
+/* Default: padding/border ADD to width */
+.box { width: 300px; padding: 20px; }
+/* Total width: 300 + 20 + 20 = 340px */
+
+/* Better: padding/border INCLUDED in width */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+.box { width: 300px; padding: 20px; }
+/* Total width: 300px exactly */
+
 
 /* Descendant (space) - any nested */
 nav a{
@@ -24,6 +32,25 @@ h2 + p{
 h2 ~ p{
     color: blue;
 }
+
+
+body{
+   /* Font family with fallbacks */
+   font-family:Arial, Helvetica, sans-serif;
+   
+   /* Size */
+
+}
+
+
+
+
+
+
+
+
+
+
 
 fieldset  a{
     display: block;
