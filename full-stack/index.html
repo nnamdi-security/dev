@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Character Encoding-->
+	<meta charset="UTF-8">
+
+	<!--Reesponsive viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--SEO-->
+	<title>HTML PRACTICE</title>
+	<meta name="--Description" content="Page Title">
+	<meta name="robots" content="index, follow">
+
+	<!--Open Graph (controls how link appears in social media)-->
+	<meta property="og:title" content="Page Title">
+	<meta property="og:description" content="Description for social">
+	<meta property="og:image" content="https://example.com/image.png">
+	<meta property="og:url" content="https://example.com">
+
+	<!--Twitter Card-->
+	<meta name="twitter:card" content="summary-large-image">
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<header>
+		<h1>Semantic HTML</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">About</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="hero">
+			<h2>The Semantic HTML & Accessibility</h2>
+			<p>Semantic HTML refers to writing HTML in a way that clearly describes the meaning, purpose, and structure of the content on a webpage rather than focusing only on appearance or layout.</p>
+			<p>In semantic HTML, elements are chosen based on what the content represents. This creates a webpage structure that is meaningful not only to developers, but also to browsers, search engines, assistive technologies, and other systems that interpret web content.</p>
+			<p>Semantic HTML improves the organization and readability of code because each section of a webpage has a clearly defined role and purpose. It helps developers understand the structure of a website more easily, especially when working in teams or maintaining projects over time.</p>
+			<p>Accessibility in web development is the practice of designing and building websites, applications, and digital content so that all people, including individuals with disabilities, can use and interact with them effectively.</p>
+			<p>The goal of accessibility is to remove barriers that may prevent users from accessing information or performing tasks on a website. Accessibility considers users with different types of impairments, including visual, hearing, physical, speech, cognitive, and neurological disabilities.</p>
+			<p>Accessibility also benefits people in temporary or situational conditions, such as users with slow internet connections, broken devices, bright sunlight, or limited technical experience.</p>
+		</section>
+
+		<section id="about">
+			<h2>About Us</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nulla ullam iste quos mollitia sit eligendi dolores, nemo voluptas. Velit ipsum tempora animi nemo repudiandae ad, est incidunt, quidem quos accusamus blanditiis quod aut maxime impedit temporibus! Excepturi culpa consequuntur atque porro odit maxime, architecto possimus saepe asperiores molestiae. Doloribus similique praesentium perspiciatis, quisquam qui corporis sit temporibus deserunt voluptas? Totam explicabo excepturi ullam ipsam provident maiores, nisi omnis aspernatur quibusdam temporibus itaque incidunt voluptates sequi nesciunt accusamus consectetur deserunt, numquam quod consequuntur et labore repellendus nam cupiditate vel. Laborum dolor, repellendus hic nam obcaecati voluptatum numquam veniam labore at quia odit reprehenderit aliquam neque ipsum fugiat perspiciatis voluptate omnis sapiente ratione inventore eos. Ad voluptas, quidem natus ducimus expedita velit, aperiam illo eaque beatae delectus aliquam iure atque distinctio obcaecati, cumque quis ipsum reprehenderit nostrum quisquam? Laborum inventore quam odio fuga reprehenderit quos incidunt accusantium doloremque dolor voluptates, ut molestiae officiis provident non atque natus ad omnis cum ullam itaque! Sunt, aperiam! Laborum, mollitia eaque sequi adipisci officia amet qui ut beatae minima similique vero nobis facere dolorum iusto vitae fugiat consectetur voluptatum, dicta dolorem ipsa. Aliquid dolores ab eveniet deserunt esse enim, impedit, explicabo veniam iusto voluptas omnis!</p>
+			<div>
+				<h4>Courses Offered</h4>
+				<ul>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+			    </ul>
+				<!--Ordered List-->
+				<ol>
+					<li>first step</li>
+					<li>Second step</li>
+					<li>Third step</li>
+				</ol>
+
+				<!--Description List-->
+				<dl>
+					<dt>HTML</dt>
+					<dd>Markup language for structure</dd>
+
+					<dt>CSS</dt>
+					<dd>stylesheet language for design</dd>
+
+					<dt>JavaScript</dt>
+					<dd>progrmming language for web interactivity</dd>
+				</dl>
+			</div>
+			<table>
+				<caption>Course Completion Rates</caption>
+
+				<thead>
+					<tr>
+						<th scope="col">Course</th>
+						<th scope="col">Students</th>
+						<th scope="col">Current progress</th>
+						<th scope="col">Target Completion Date</th>
+						<th scope="col">Actual Completion Date</th>
+						<th scope="col">Completion Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>HTML</td>
+						<td>150</td>
+						<td>85%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>completed</td>
+					</tr>
+					<tr>
+						<td>CSS</td>
+						<td>140</td>
+						<td>89%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>In progress</td>
+					</tr>
+					<tr>
+						<td>JavaScript</td>
+						<td>88</td>
+						<td>47%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>completed</td>
+					</tr>
+					<tr>
+						<td>Tailwind</td>
+						<td>85</td>
+						<td>41%</td>
+						<td>May 20, 2026</td>
+						<td>May 5, 2026</td>
+						<td>Ahead of schedule</td>
+					</tr>
+					<tr>
+						<td>React</td>
+						<td>89</td>
+						<td>77%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>Behind schedule</td>
+					</tr>
+					<td>Vue JS</td>
+						<td>49</td>
+						<td>78%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>In progress</td>
+				</tbody>
+			</table>
+		</section>
+
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempore voluptatibus illo dolor placeat aspernatur non aliquid omnis cum fugiat.
+			</p>
+			<img src="./images/html.avif"
+				 alt="photo of html icon"
+				 width="400" height="200"
+				 loading="lazy"	
+				 
+			>
+			<!--Figure with caption-->
+			<figure>
+				<img src="./images/html2.jfif" alt="photo of html" width="400" height="200" loading="lazy">
+				<figcaption>A beautiful design of HTML</figcaption>
+			</figure>
+
+			<!--Different images for different screens-->
+			<picture>
+				<source media="(min-width: 1024px)" srcset="./images/jonatan-pie-3l3RwQdHRHg-unsplash.jpg">
+				<source media="(min-width: 768px)" srcset="./images/john-towner-3Kv48NS4WUU-unsplash.jpg">
+				<source media="(min-width: 480)" srcset="./images/jeremy-bishop-EwKXn5CapA4-unsplash.jpg">
+			</picture>
+		</section>
+
+		<article>
+			<div class="media">
+				<h2>HTML5 Media Elements</h2>
+				<h4>Video Element</h4>
+				<p>This is video for the Bip-60 challenge posted on YouTube</p>
+				<video controls width="640" height="360" poster="./Form-BiP-60-Cover.jpg" loop muted autoplay>
+				   <source src="./videos/file.mp4" type="video/mp4">
+				   <source src=".webm" type="video/webm">
+				   <track src="captions.vtt" kind="captions" srclang="en" label="English">
+				   Your browswer doesn't support video
+				</video>
+			</div>
+			<div class="media">
+				<h4>Audio Element</h4>
+				<audio controls muted loop autoplay>
+					<source src="./audios/Alegend - Pinnacle (freetouse.com).mp3" type="audio/mp3">
+					<source src="" type="audio/ ogg">
+					Your browswer doesn't support audio
+				</audio>
+			</div>
+		</article>
+
+		<aside>
+			<h3>Upcoming AI annotation project</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod quos enim quasi labore ut voluptate culpa alias beatae repudiandae?</p>
+		</aside>
+
+		<form action="/submit" method="post">
+			<fieldset>
+			<legend>Personal information</legend>
+			
+			<label for="name">Full name</label>
+			<input type="text" id="name" name="name" placeholder="enter full name" required autocomplete="name" area-describedby="name-help">
+			<small id="name-help">Enter your full legal name</small><br><br>
+
+			<label for="dob">Date of Birth</label>
+			<input type="date" name="dob" value="DD-MM-YYYY" min="01-01-2026" max="01-01-1970"><br><br>
+
+			<label for="age">Age (18+):</label>
+			<input type="number" id="age" name="age" min="18" max="65" required><br><br>
+
+			<label><input type="radio" name="gender" value="male">Male</label>
+			<label><input type="radio" name="gender" value="female">Female</label><br><br>
+
+			<select name="title">
+				<option value="">select a title</option>
+				<option value="Mr.">Mr.</option>
+				<option value="Ms.">Ms.</option>
+				<option vlaue="Dr.">Dr.</option>
+			</select>	<br>
+			
+			</fieldset>
+
+			<fieldset>
+			<legend>Contact Details</legend>
+			
+			<label for="email">Email address</label>
+			<input type="email" id="email" name="email" required placeholder="email@example.com" autocomplete="email"><br><br>
+			
+			<label for="phone">Phone Number</label>
+			<input type="tel" name="phone" id="phone" placeholder="+234 123 456 7890" required autocomplete="tel"><br><br>
+
+			<label for="address">Home address</label>
+			<input type="text" id="text" name="address" placeholder="your current home address" required><br><br>
+			
+			<label for="country">Country</label>
+			<input type="text" id="country" name="country" list="countries" placeholder="select your country">
+			<datalist id="countries">
+				<option value="Nigeria">
+				<option value="Kenya">
+				<option value="South Africa">
+				<option value="Ghana">
+				<option value="Egypt">
+			</datalist><br><br>
+
+			<p>Preferred Contact Method</p>
+			<label><input type="checkbox" name="contact-method" value="email">Email</label>
+			<label><input type="checkbox" name="contact-method" value="sms">SMS</label>
+			<label><input type="checkbox" name="contact-method" value="phone">Phone</label>
+			
+			</fieldset>
+
+			<fieldset>
+			<legend>Account Credentials</legend>
+
+			<label for="username">Username (3-20 characters):</label>
+			<input type="text" id="username" name="username" required minlength="3" maxlength="20"><br><br>
+
+			<label for="password">Password (8+ characters):</label>
+			<input type="password" id="password" name="password" placeholder="********" required minlength="8" aria-describedby="pwd-help">
+			<small id="pwd-help">Must be at least 8 characters</small>
+			</fieldset>
+
+			<fieldset>
+				<legend>Other Details</legend>
+
+				<label>Course Progress</label>
+				<progress value="70" max="100">70%</progress><br><br>
+
+				<label>Disk Usage</label>
+				<meter value="0.7" min="0" max="1" low="0.3" high="0.8" optimum="0.5">70%</meter><br><br>
+
+				<label for="search">Input your search</label>
+				<input type="search" id="search" name="search" placeholder="search..."><br><br>
+
+				<label for="url">Your website URL</label>
+				<input type="url" id="url" name="url" placeholder="https://..."><br><br>
+
+				<label for="file">Up your photo</label>
+				<input type="file" name="file" id="file" accept="image/*"><br><br>
+
+				
+				<textarea name="message" rows="4" placeholder="insert your comment..."></textarea><br><br>
+				
+				<button type="submit">Submit</button>
+			</fieldset>
+
+			<fieldset>
+				<legend> Contact Us</legend>
+
+				<a href="mailto:petersaint515@gmail.com">Email Us</a>
+
+				<!--Email with Subject-->
+				<a href="mailto:petersaint515@gmail.com?subject=Question">Ask a Question</a>
+
+				<!--Phone link(Great for Mobile)-->
+				<a href="tel:+2348132961402">Call Us</a>
+			</fieldset>
+	    </form>
+	</main>
+	<footer>
+		<p>&copy; 2026 HackathonAfrica LMS. Part of AfricaPlan Foundation </p>
+	</footer>
+</body>
+</html>
