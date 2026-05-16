@@ -80,7 +80,10 @@
 					<tr>
 						<th scope="col">Course</th>
 						<th scope="col">Students</th>
-						<th scope="col">Completion</th>
+						<th scope="col">Current progress</th>
+						<th scope="col">Target Completion Date</th>
+						<th scope="col">Actual Completion Date</th>
+						<th scope="col">Completion Status</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -88,17 +91,48 @@
 						<td>HTML</td>
 						<td>150</td>
 						<td>85%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>completed</td>
 					</tr>
 					<tr>
 						<td>CSS</td>
 						<td>140</td>
 						<td>89%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>In progress</td>
 					</tr>
 					<tr>
 						<td>JavaScript</td>
 						<td>88</td>
 						<td>47%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>completed</td>
 					</tr>
+					<tr>
+						<td>Tailwind</td>
+						<td>85</td>
+						<td>41%</td>
+						<td>May 20, 2026</td>
+						<td>May 5, 2026</td>
+						<td>Ahead of schedule</td>
+					</tr>
+					<tr>
+						<td>React</td>
+						<td>89</td>
+						<td>77%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>Behind schedule</td>
+					</tr>
+					<td>Vue JS</td>
+						<td>49</td>
+						<td>78%</td>
+						<td>May 20, 2026</td>
+						<td>May 15, 2026</td>
+						<td>In progress</td>
 				</tbody>
 			</table>
 		</section>
@@ -107,7 +141,7 @@
 			<h2>Contact Us</h2>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempore voluptatibus illo dolor placeat aspernatur non aliquid omnis cum fugiat.
 			</p>
-			<img src="./html.avif"
+			<img src="./images/html.avif"
 				 alt="photo of html icon"
 				 width="400" height="200"
 				 loading="lazy"	
@@ -115,15 +149,15 @@
 			>
 			<!--Figure with caption-->
 			<figure>
-				<img src="./html2.jfif" alt="photo of html" width="400" height="200" loading="lazy">
+				<img src="./images/html2.jfif" alt="photo of html" width="400" height="200" loading="lazy">
 				<figcaption>A beautiful design of HTML</figcaption>
 			</figure>
 
 			<!--Different images for different screens-->
 			<picture>
-				<source media="(min-width: 1024px)" srcset="./jonatan-pie-3l3RwQdHRHg-unsplash.jpg">
-				<source media="(min-width: 768px)" srcset="./john-towner-3Kv48NS4WUU-unsplash.jpg">
-				<source media="(min-width: 480)" srcset="./jeremy-bishop-EwKXn5CapA4-unsplash.jpg">
+				<source media="(min-width: 1024px)" srcset="./images/jonatan-pie-3l3RwQdHRHg-unsplash.jpg">
+				<source media="(min-width: 768px)" srcset="./images/john-towner-3Kv48NS4WUU-unsplash.jpg">
+				<source media="(min-width: 480)" srcset="./images/jeremy-bishop-EwKXn5CapA4-unsplash.jpg">
 			</picture>
 		</section>
 
@@ -133,7 +167,7 @@
 				<h4>Video Element</h4>
 				<p>This is video for the Bip-60 challenge posted on YouTube</p>
 				<video controls width="640" height="360" poster="./Form-BiP-60-Cover.jpg" loop muted autoplay>
-				   <source src="./file.mp4" type="video/mp4">
+				   <source src="./videos/file.mp4" type="video/mp4">
 				   <source src=".webm" type="video/webm">
 				   <track src="captions.vtt" kind="captions" srclang="en" label="English">
 				   Your browswer doesn't support video
@@ -142,7 +176,7 @@
 			<div class="media">
 				<h4>Audio Element</h4>
 				<audio controls muted loop autoplay>
-					<source src="./Alegend - Pinnacle (freetouse.com).mp3" type="audio/mp3">
+					<source src="./audios/Alegend - Pinnacle (freetouse.com).mp3" type="audio/mp3">
 					<source src="" type="audio/ ogg">
 					Your browswer doesn't support audio
 				</audio>
