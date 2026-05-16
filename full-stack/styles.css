@@ -36,11 +36,7 @@ h2 ~ p{
     color: blue;
 }
 
-/*
-====================================================
-Font Properties
-====================================================
-*/
+
 body{
    /* Font family with fallbacks */
    font-family:Arial, Helvetica, sans-serif;
@@ -62,9 +58,16 @@ body{
      line-height: 1.2;  /* unitless recommended */
 
      /* Modeern: oklch (better for gradients) */
-     color: oklch(14.958% 0.00002 271.152);
-     
+     color: oklch(97.023% 0.00426 15.806);
+     background-color: black;
+
+     /* Sticky footer */
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
 }
+main{ flex: 1;}
+
 
 h1{
     word-spacing: -0.02em;
@@ -100,15 +103,17 @@ Backgrounds
 }
 .nav-links ul{
     display: flex;
-    align-items: start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    gap: 20px;
 }
 
 
 .nav-container{
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 70px;
 }
 /*
 ====================================================
