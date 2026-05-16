@@ -14,7 +14,7 @@
 
 /* Descendant (space) - any nested */
 nav a{
-    color: rgb(3, 20, 129);
+    color: rgb(15, 45, 241);
 }
 
 /* Child (>) - direct children only */
@@ -33,16 +33,58 @@ h2 ~ p{
     color: blue;
 }
 
-
+/*
+====================================================
+Font Properties
+====================================================
+*/
 body{
    /* Font family with fallbacks */
    font-family:Arial, Helvetica, sans-serif;
    
    /* Size */
+    /* Size */
+    font-size: 16px;      /* absolute */
+    font-size: 1rem;      /* relative to root */
+    font-size: 1.2em;     /* relative to parent */
 
+     /* Weight */
+     font-weight: 400; /* normal */
+     /*font-weight: 700; /* bold */
+
+     /* style */
+     font-style: normal;
+
+     /* Line height */
+     line-height: 1.6;  /* unitless recommended */
 }
 
+h1{
+    word-spacing: -0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+/*
+====================================================
+Box Model Properties
+====================================================
+*/
+img{
+     /* Content size */
+    width: 300px;
+    height: 200px;
 
+    /* Padding (inside border) */
+    padding: 10px;
+
+     /* Border */
+     border: solid 2px #00FF66;
+     border-radius: 8px;
+
+    /* Margin (outside border) */
+    margin: 20px;
+    /*margin: 0 auto;  /* center horizontal */ 
+}
 
 
 
