@@ -88,6 +88,10 @@ Backgrounds
     background-size: cover;
     background-position: center;
 }
+.nav-links{
+    display: flex;
+    align-items: end;
+}
 /*
 ====================================================
 Box Model Properties
