@@ -22,7 +22,6 @@ nav a{
 /* Child (>) - direct children only */
 ul > li{
     margin: 10px;
-    text-decoration: none;
 }
 
 /* Adjacent sibling (+) - immediately after */
@@ -97,18 +96,6 @@ Backgrounds
     /*Gradient*/
     background: linear-gradient(right, #00ff66, #0066FF);
     background: radial-gradient(circle, #00FF66, transparent);
-}
-.nav-links ul{
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-}
-
-
-.nav-container{
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
 }
 /*
 ====================================================
