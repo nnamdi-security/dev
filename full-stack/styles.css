@@ -1,5 +1,5 @@
 /* Default: padding/border ADD to width */
-.box { width: 300px; padding: 20px; }
+/*.box { width: 300px; padding: 20px; }
 /* Total width: 300 + 20 + 20 = 340px */
 
 /* Better: padding/border INCLUDED in width */
@@ -8,10 +8,12 @@
     margin: 0;
     padding: 0;
 }
-.box { width: 300px; padding: 20px; }
+/*.box { width: 300px; padding: 20px; }
 /* Total width: 300px exactly */
 
-
+html{
+    font-size: 16px;
+}
 /* Descendant (space) - any nested */
 nav a{
     color: rgb(15, 45, 241);
@@ -56,13 +58,35 @@ body{
      font-style: normal;
 
      /* Line height */
-     line-height: 1.6;  /* unitless recommended */
+     line-height: 1.2;  /* unitless recommended */
+
+     /* Modeern: oklch (better for gradients) */
+     color: oklch(14.958% 0.00002 271.152);
+     
 }
 
 h1{
     word-spacing: -0.02em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+
+p{
+    text-align: left;
+    
+}
+
+/*
+====================================================
+Backgrounds
+====================================================
+*/
+#hero{
+    background-color: #0a0c10;
+    background-image: url(./hero.jpg);
+    background-size: cover;
+    background-position: center;
 }
 /*
 ====================================================
