@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-grid-container{
+.grid-container{
     display: grid;
     grid-template-areas: 
         'header header header'
@@ -20,10 +20,10 @@ grid-container{
     background-color: rgba(255, 255, 255, 0.8);;
     
 }
-.sidebar-left{grid-area: sidebar;}
+.sidebar-left{grid-area: sidebar-left;}
 .main{grid-area: main;}
-.sidebar-right{grid-area: aside;}
-footer{grid-area: footer;}
+.sidebar-right{grid-area: sidebar-right;}
+.footer{grid-area: footer;}
 
 .image-grid{
     display: grid;
@@ -33,3 +33,27 @@ footer{grid-area: footer;}
 .image-card{
     border: 2px solid red
 }
+
+
+
+
+
+
+
+/* 
+===============================
+RESPONSIVE DESIGN
+===============================
+ */
+ /*Mobile: stack everything*/
+ @media screen and (max-width: 768px){
+    .grid-container{
+        grid-template-areas: 
+        'header'
+        'sidebar-left'
+        'main'
+        'sidebar-right'
+        'footer';
+        grid-template-columns: 1fr;
+    }
+ }
