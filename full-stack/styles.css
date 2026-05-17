@@ -1,3 +1,12 @@
+:root{
+    --primary: #00FF66;
+    --bg-dark: #0A0A0A;
+    
+}
+
+
+
+
 /* Default: padding/border ADD to width */
 /*.box { width: 300px; padding: 20px; }
 /* Total width: 300 + 20 + 20 = 340px */
@@ -58,8 +67,8 @@ body{
      line-height: 1.2;  /* unitless recommended */
 
      /* Modeern: oklch (better for gradients) */
-     color: oklch(97.023% 0.00426 15.806);
-     background-color: black;
+     color: oklch(17.764% 0.00002 271.152);
+     background-color: rgb(117, 114, 114);
 
      /* Sticky footer */
      display: flex;
@@ -73,6 +82,7 @@ h1{
     word-spacing: -0.02em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-shadow: 4px 4px 8px rgba(20, 245, 31, 0.3);
 }
 
 
@@ -191,7 +201,7 @@ input:required{border-left: 2px solid red;}
     transition: all 0.5s ease;
 }
 .button:hover{
-    background: #00Ff66;
+    background: var(--primary);
     color: #0A0A0A;
     transform: scale(1.05);
     text-transform: uppercase;
