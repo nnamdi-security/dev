@@ -120,7 +120,7 @@ Backgrounds
 Box Model Properties
 ====================================================
 */
-img{
+.image1{
      /* Content size */
     width: 300px;
     height: 200px;
@@ -134,10 +134,30 @@ img{
 
     /* Margin (outside border) */
     margin: 20px;
-    /*margin: 0 auto;  /* center horizontal */ 
+    /*margin: 0 auto;  /* center horizontal */
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease; 
+}
+.image1:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 20px 20px rgba(247, 7, 7, 0.3);
 }
 
 
+.image2{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    border: solid 2px #00FF66;
+    border-radius: 8px;
+    margin: 20px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0; transform: translateY(20px);}
+    to   {opacity: 1; transform: translateY(0);}
+}
 /*
 ====================================================
 Pseudo-classes and Pseudo-elements
@@ -157,7 +177,26 @@ tr:nth-child(even){background: #0066FF;}
 tr:nth-child(odd){background: #00FF66;}
 p:nth-of-type(2){color: brown;}
 
+/*form states*/
+input:valid{border-color: green;}
+input:invalid{border-bottom-color: red;}
+input:required{border-left: 2px solid red;}
 
+/*Transition*/
+.button{
+    background: #333;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    background: #00Ff66;
+    color: #0A0A0A;
+    transform: scale(1.05);
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 
 
