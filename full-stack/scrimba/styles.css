@@ -1,0 +1,29 @@
+.button1{
+    background: yellow;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: medium;
+    transition: all 0.5s ease;
+}
+.button1:hover{
+    background-color: aqua;
+    color: black;
+    transform: scale(1.05);
+}
+
+.button2{
+
+}
+
+.button2{
+    background: orange;
+    padding: 10px 20px;
+    color: white;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.button2:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
