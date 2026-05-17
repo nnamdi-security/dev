@@ -183,7 +183,7 @@ RESPONSIVE DESIGN
     display: flex;
     flex-direction: column;
 }
-header{
+.nav-links ul{
     display: flex;
     flex-direction: column;
 }
@@ -194,6 +194,10 @@ header{
         padding: 2rem;
         max-width: 720px;
     }
+    .nav-links ul{
+    display: flex;
+    flex-direction: column;
+}
 }
 
 /* Deskop */
