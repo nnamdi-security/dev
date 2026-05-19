@@ -84,7 +84,7 @@ const car =
 for (const key in car){
     console.log(key, car[key]);
 }
-*/
+
 
 // While Loop
 let count = 1;
@@ -93,6 +93,41 @@ while(count <= 10){
     count++
 }
 
+
+//.push()
 const colors = [];
 colors.push('Red', 'Blue', 'Green');
 console.log(colors);
+
+
+//.pop()
+const foods = ['Beans', 'Rice', 'Garri', 'Corn'];
+foods.pop();
+console.log(foods);
+
+
+//forEach()
+const scores = [45, 67, 89, 90];
+scores.forEach(scores => console.log(scores));
+
+//map()
+const prices = [100, 200, 300];
+const doubled = prices.map(prices => prices * 2);
+console.log(doubled);
+
+
+//filter()
+const ages = [12, 18, 25, 15, 30];
+const adults = ages.filter(ages => ages >= 18);
+ console.log(adults);
+
+
+
+ function greet(name = 'Guest'){
+    return `Hello ${name}`;
+
+ }
+ console.log(greet('Nnamdi'));
+*/
+ const greet = (name) => `Hello ${name}`;
+ console.log(greet('Amara'));
