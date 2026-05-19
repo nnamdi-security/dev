@@ -1,0 +1,364 @@
+/* =========================================================
+   File: style.css
+   Project: CHILDRENSMART Landing Page
+   Description:
+   This stylesheet controls the appearance of the website.
+   Mobile First Approach
+========================================================= */
+
+
+/* =========================================================
+   RESET DEFAULT BROWSER STYLES
+========================================================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY STYLING
+========================================================= */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* =========================================================
+   MAIN GRID CONTAINER
+========================================================= */
+.container{
+    display: grid;
+
+    /* Grid Layout Structure */
+    grid-template-areas:
+    "header header header"
+    "left-sidebar main right-sidebar"
+    "footer footer footer";
+
+    grid-template-columns: 220px 1fr 220px;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   HEADER SECTION
+========================================================= */
+.header{
+    grid-area: header;
+
+    background-color: red;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+
+    border: 5px solid darkred;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+.logo h1{
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   NAVIGATION MENU
+========================================================= */
+.main-nav{
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Dropdown Container */
+.dropdown{
+    position: relative;
+}
+
+
+/* Dropdown Button */
+.dropbtn{
+    background-color: transparent;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+
+/* Dropdown Content */
+.dropdown-content{
+    display: none;
+
+    position: absolute;
+
+    background-color: white;
+
+    min-width: 180px;
+
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* Dropdown Links */
+.dropdown-content a{
+    display: block;
+
+    padding: 12px;
+
+    text-decoration: none;
+
+    color: black;
+}
+
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+.search-bar{
+    display: flex;
+}
+
+
+.search-bar input{
+    padding: 8px;
+    border: none;
+}
+
+
+.search-bar button{
+    padding: 8px 12px;
+
+    border: none;
+
+    background-color: black;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero-section{
+    grid-column: 1 / 4;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr 1fr 250px;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background-color: #ffcccc;
+
+    min-height: 35vh;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+.sidebar-left{
+    background-color: white;
+
+    padding: 20px;
+}
+
+
+.sidebar-left ul{
+    list-style: none;
+}
+
+
+.sidebar-left li{
+    margin-bottom: 15px;
+}
+
+
+.sidebar-left a{
+    text-decoration: none;
+
+    color: black;
+}
+
+
+/* =========================================================
+   HERO FEATURE BOXES
+========================================================= */
+.hero-feature{
+    background-color: white;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   RIGHT SIDEBAR
+========================================================= */
+.sidebar-right{
+    background-color: white;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT SECTION
+========================================================= */
+.main-content{
+    grid-column: 1 / 4;
+
+    padding: 20px;
+}
+
+
+/* Product Row */
+.product-row{
+    margin-bottom: 40px;
+}
+
+
+/* Product Row Title */
+.product-row h2{
+    margin-bottom: 20px;
+}
+
+
+/* Product Cards Container */
+.product-container{
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Product Card */
+.product-card{
+    background-color: white;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+
+/* Hover Effect */
+.product-card:hover{
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   FOOTER SECTION
+========================================================= */
+.footer{
+    grid-area: footer;
+
+    background-color: black;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    position: sticky;
+
+    bottom: 0;
+}
+
+
+/* Social Icons */
+.social-icons{
+    margin-top: 10px;
+}
+
+
+.social-icons a{
+    color: white;
+
+    margin: 0 10px;
+
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+@media(max-width: 768px){
+
+    .container{
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section{
+        grid-template-columns: 1fr;
+    }
+
+    .product-container{
+        grid-template-columns: 1fr;
+    }
+
+    .header{
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .main-nav{
+        flex-direction: column;
+    }
+}

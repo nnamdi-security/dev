@@ -1,0 +1,27 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "Welcome to my main development repository. This space serves as a comprehensive collection of my projects, lab exercises, and assessments as I progress through my Full-Stack Web Development training.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnamdi-security/dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nnamdi-security/dev/issues"
+  },
+  "homepage": "https://github.com/nnamdi-security/dev#readme",
+  "devDependencies": {
+    "@eslint/css": "^1.2.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0"
+  }
+}

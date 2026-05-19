@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================================================
+       META & CHARACTER ENCODING
+       - charset: ensures special characters display correctly
+       - viewport: makes the page scale properly on mobile devices
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHILDRENSMART – Kids Clothing & Accessories</title>
+
+  <!-- ============================================================
+       EXTERNAL FONTS
+       We import two Google Fonts:
+         • "Nunito"   – playful, rounded body font for paragraphs
+         • "Fredoka One" – bold, friendly display font for headings
+       They are linked here (in <head>) so they load before the
+       page is painted, preventing a "flash of unstyled text".
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ============================================================
+       FONT AWESOME (Social-media & UI icons)
+       CDN link – gives us icon classes like fa-facebook, fa-search
+  ============================================================ -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- ============================================================
+       OUR CUSTOM STYLESHEET
+       All visual styling lives in styles.css (separate file).
+       Keeping HTML and CSS in separate files:
+         ✓ Makes the code easier to read and maintain
+         ✓ Allows multiple HTML pages to share the same CSS
+  ============================================================ -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       PAGE WRAPPER  (CSS Grid root)
+       This single <div> is our CSS Grid container.
+       In styles.css we set:
+         grid-template-areas:
+           'header header header'
+           'left-sidebar main right-sidebar'
+           'footer footer footer';
+       Every direct child of .page-wrapper must declare which
+       grid area it occupies via the `grid-area` property.
+  ============================================================ -->
+  <div class="page-wrapper">
+
+
+    <!-- ========================================================
+         GRID AREA: header
+         Contains the logo, main navigation menu, and search bar.
+    ======================================================== -->
+    <header class="site-header" role="banner">
+
+      <!-- --------------------------------------------------
+           LOGO  (top-left corner of the header)
+           We build the logo with pure HTML + CSS so it loads
+           instantly without an image file.
+           A <span> is used inside because <a> cannot contain
+           block-level elements in older HTML; spans are inline.
+      -------------------------------------------------- -->
+      <a href="index.html" class="logo" aria-label="CHILDRENSMART – go to homepage">
+        <!-- Colourful circle icon -->
+        <span class="logo-icon" aria-hidden="true">👕</span>
+        <!-- Brand name split into two colour spans -->
+        <span class="logo-text">
+          <span class="logo-children">CHILDREN</span><span class="logo-smart">SMART</span>
+        </span>
+      </a>
+
+      <!-- --------------------------------------------------
+           MAIN NAVIGATION MENU
+           <nav> is a semantic HTML5 landmark – screen readers
+           and search engines understand it as site navigation.
+           Each <li> holds a top-level link AND a hidden
+           .dropdown div that appears on hover (CSS only).
+      -------------------------------------------------- -->
+      <nav class="main-nav" aria-label="Main menu">
+        <ul class="nav-list" role="list">
+
+          <!-- ---- Products ---- -->
+          <li class="nav-item has-dropdown">
+            <!-- aria-haspopup tells assistive tech a submenu exists -->
+            <a href="#products" class="nav-link" aria-haspopup="true">
+              Products <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+            </a>
+            <!-- Dropdown menu – hidden by default, shown on :hover in CSS -->
+            <div class="dropdown" role="menu">
+              <a href="#shoes"     class="dropdown-item" role="menuitem">Children's Shoes</a>
+              <a href="#girls-toys" class="dropdown-item" role="menuitem">Girls' Toys</a>
+              <a href="#boys-toys"  class="dropdown-item" role="menuitem">Boys' Toys</a>
+              <a href="#uniforms"  class="dropdown-item" role="menuitem">School Uniforms</a>
+              <a href="#blouses"   class="dropdown-item" role="menuitem">Girls' Blouses</a>
+              <a href="#trousers"  class="dropdown-item" role="menuitem">Boys' Trousers</a>
+              <a href="#skirts"    class="dropdown-item" role="menuitem">Girls' Skirts</a>
+            </div>
+          </li>
+
+          <!-- ---- Services ---- -->
+          <li class="nav-item has-dropdown">
+            <a href="#services" class="nav-link" aria-haspopup="true">
+              Services <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown" role="menu">
+              <a href="#services" class="dropdown-item" role="menuitem">Free Shipping</a>
+              <a href="#services" class="dropdown-item" role="menuitem">Gift Wrapping</a>
+              <a href="#services" class="dropdown-item" role="menuitem">Bulk Orders</a>
+              <a href="#services" class="dropdown-item" role="menuitem">School Packages</a>
+            </div>
+          </li>
+
+          <!-- ---- Customer Service ---- -->
+          <li class="nav-item has-dropdown">
+            <a href="#customer-service" class="nav-link" aria-haspopup="true">
+              Customer Service <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown" role="menu">
+              <a href="#customer-service" class="dropdown-item" role="menuitem">Track My Order</a>
+              <a href="#customer-service" class="dropdown-item" role="menuitem">Returns & Refunds</a>
+              <a href="#customer-service" class="dropdown-item" role="menuitem">Size Guide</a>
+              <a href="#customer-service" class="dropdown-item" role="menuitem">FAQs</a>
+            </div>
+          </li>
+
+          <!-- ---- Contact Us ---- -->
+          <li class="nav-item has-dropdown">
+            <a href="#contact" class="nav-link" aria-haspopup="true">
+              Contact Us <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown" role="menu">
+              <a href="#contact" class="dropdown-item" role="menuitem">Live Chat</a>
+              <a href="#contact" class="dropdown-item" role="menuitem">Email Us</a>
+              <a href="#contact" class="dropdown-item" role="menuitem">Store Locator</a>
+              <a href="#contact" class="dropdown-item" role="menuitem">WhatsApp</a>
+            </div>
+          </li>
+
+        </ul>
+      </nav><!-- /main-nav -->
+
+      <!-- --------------------------------------------------
+           SEARCH BAR  (top-right of the header)
+           role="search" marks this region for screen readers.
+           The button uses aria-label so its icon is accessible.
+      -------------------------------------------------- -->
+      <div class="search-bar" role="search">
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search for products…"
+          aria-label="Search products"
+        />
+        <button class="search-btn" aria-label="Submit search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+      </div>
+
+    </header><!-- /site-header -->
+
+
+    <!-- ========================================================
+         GRID AREA: left-sidebar
+         Alibaba-style category sidebar.
+         Clicking each link scrolls the user to the matching
+         product row inside <main>.
+         We use <nav> again because this is site navigation.
+    ======================================================== -->
+    <aside class="sidebar-left" aria-label="Product categories">
+
+      <h2 class="sidebar-title">Categories</h2>
+
+      <!-- Each <a> href points to the id="" on the product rows -->
+      <nav>
+        <ul class="sidebar-list" role="list">
+          <li>
+            <a href="#shoes" class="sidebar-link">
+              <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>
+              Children's Shoes
+            </a>
+          </li>
+          <li>
+            <a href="#girls-toys" class="sidebar-link">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              Girls' Toys
+            </a>
+          </li>
+          <li>
+            <a href="#boys-toys" class="sidebar-link">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+              Boys' Toys
+            </a>
+          </li>
+          <li>
+            <a href="#uniforms" class="sidebar-link">
+              <i class="fa-solid fa-school" aria-hidden="true"></i>
+              Sample School Uniforms
+            </a>
+          </li>
+          <li>
+            <a href="#blouses" class="sidebar-link">
+              <i class="fa-solid fa-shirt" aria-hidden="true"></i>
+              Girls' Blouses
+            </a>
+          </li>
+          <li>
+            <a href="#trousers" class="sidebar-link">
+              <i class="fa-solid fa-person" aria-hidden="true"></i>
+              Boys' Trousers
+            </a>
+          </li>
+          <li>
+            <a href="#skirts" class="sidebar-link">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Girls' Skirts
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </aside><!-- /sidebar-left -->
+
+
+    <!-- ========================================================
+         GRID AREA: main
+         Contains:
+           1. Hero / banner section (full-width promo strip)
+           2. Product rows (7 rows × 5 cards each)
+    ======================================================== -->
+    <main class="main-content" id="main-content">
+
+      <!-- ------------------------------------------------------
+           HERO SECTION
+           Styled to be 35% of the viewport height (35vh).
+           Divided into 3 visual columns mirroring Alibaba:
+             Col 1 – "Hot picks" featured products (left)
+             Col 2 – Highlighted deal / banner (centre)
+             Col 3 – Rotating advert slideshow (right, sidebar-right)
+           NOTE: The sidebar-right column lives INSIDE <main>
+           because it is visually part of the hero.  The CSS
+           grid-template-areas puts the actual .sidebar-right
+           element in the third grid column already, so we re-use
+           that slot only for the hero layout here.
+      ------------------------------------------------------ -->
+      <section class="hero-section" aria-label="Promotional banner">
+
+        <!-- LEFT part of hero: two featured product thumbnails -->
+        <div class="hero-featured">
+          <h3 class="hero-label">🔥 Hot Picks</h3>
+          <div class="hero-products">
+            <!-- Featured product card 1 -->
+            <div class="hero-product-card">
+              <div class="hero-product-img" aria-hidden="true">👟</div>
+              <p class="hero-product-name">Sneakers</p>
+              <p class="hero-product-price">₦4,500</p>
+            </div>
+            <!-- Featured product card 2 -->
+            <div class="hero-product-card">
+              <div class="hero-product-img" aria-hidden="true">👗</div>
+              <p class="hero-product-name">Party Dress</p>
+              <p class="hero-product-price">₦6,800</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTRE part of hero: main promotional banner image/text -->
+        <div class="hero-banner">
+          <!-- Large decorative emoji replaces an image in this demo -->
+          <div class="hero-banner-art" aria-hidden="true">🎒🌈👕</div>
+          <h2 class="hero-headline">Back-to-School Sale!</h2>
+          <p class="hero-subline">Up to 40% off on uniforms, shoes & more</p>
+          <a href="#uniforms" class="hero-cta">Shop Now</a>
+        </div>
+
+        <!-- RIGHT part of hero: sliding advert carousel (sidebar-right) -->
+        <!-- This div also acts as the right-sidebar grid area -->
+        <div class="hero-slideshow sidebar-right" aria-label="Advertisement slideshow" aria-live="polite">
+
+          <!-- Slides – only one visible at a time (CSS handles this) -->
+          <div class="slide slide-1 active">
+            <div class="slide-emoji" aria-hidden="true">🎀</div>
+            <p class="slide-text">NEW ARRIVALS<br/>Girls' Collection 2025</p>
+          </div>
+          <div class="slide slide-2">
+            <div class="slide-emoji" aria-hidden="true">⚽</div>
+            <p class="slide-text">SPORTS RANGE<br/>Boys' Active Wear</p>
+          </div>
+          <div class="slide slide-3">
+            <div class="slide-emoji" aria-hidden="true">🏫</div>
+            <p class="slide-text">SCHOOL READY<br/>Full Uniform Sets</p>
+          </div>
+
+          <!-- Dot navigation for the slideshow -->
+          <div class="slide-dots" aria-label="Slideshow navigation">
+            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+
+        </div><!-- /hero-slideshow -->
+
+      </section><!-- /hero-section -->
+
+
+      <!-- ------------------------------------------------------
+           PRODUCT SECTION
+           7 rows of product cards.
+           Each row has:
+             • An id="" matching the sidebar links
+             • A heading describing the category
+             • 5 product cards (.product-card)
+      ------------------------------------------------------ -->
+      <section class="products-section" aria-label="Products">
+
+        <!-- ================================================
+             ROW 1 – CHILDREN'S SHOES
+             5 shoe types: male sandals, female sandals,
+             laced shoes, non-laced (slip-on), and boots.
+        ================================================ -->
+        <div class="product-row" id="shoes">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i> Children's Shoes
+          </h2>
+          <div class="product-grid">
+
+            <!-- Card 1 -->
+            <article class="product-card">
+              <div class="card-badge">New</div>
+              <div class="card-img" aria-hidden="true">👟</div>
+              <div class="card-body">
+                <h3 class="card-name">Boys' Laced Sneakers</h3>
+                <p class="card-desc">Durable rubber sole, breathable mesh upper</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,500</span>
+                  <button class="add-to-cart" aria-label="Add Boys Laced Sneakers to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">👡</div>
+              <div class="card-body">
+                <h3 class="card-name">Girls' Glitter Sandals</h3>
+                <p class="card-desc">Velcro strap, cushioned footbed, sizes 20–35</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,800</span>
+                  <button class="add-to-cart" aria-label="Add Girls Glitter Sandals to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🥿</div>
+              <div class="card-body">
+                <h3 class="card-name">Boys' Slip-On Loafers</h3>
+                <p class="card-desc">Non-laced, easy-on school shoe</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,200</span>
+                  <button class="add-to-cart" aria-label="Add Boys Slip-On Loafers to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">👢</div>
+              <div class="card-body">
+                <h3 class="card-name">Girls' Rain Boots</h3>
+                <p class="card-desc">Waterproof, fun printed patterns</p>
+                <div class="card-footer">
+                  <span class="card-price">₦5,100</span>
+                  <button class="add-to-cart" aria-label="Add Girls Rain Boots to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">👞</div>
+              <div class="card-body">
+                <h3 class="card-name">Unisex School Sandals</h3>
+                <p class="card-desc">Leather-look, adjustable buckle</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,900</span>
+                  <button class="add-to-cart" aria-label="Add Unisex School Sandals to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /product-grid -->
+        </div><!-- /row shoes -->
+
+
+        <!-- ================================================
+             ROW 2 – GIRLS' TOYS
+        ================================================ -->
+        <div class="product-row" id="girls-toys">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Girls' Toys
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">Popular</div>
+              <div class="card-img" aria-hidden="true">🪆</div>
+              <div class="card-body">
+                <h3 class="card-name">Dress-Up Doll Set</h3>
+                <p class="card-desc">12 outfits, accessories included</p>
+                <div class="card-footer">
+                  <span class="card-price">₦7,200</span>
+                  <button class="add-to-cart" aria-label="Add Dress-Up Doll Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🎨</div>
+              <div class="card-body">
+                <h3 class="card-name">Art & Craft Kit</h3>
+                <p class="card-desc">Paints, brushes, canvas & stickers</p>
+                <div class="card-footer">
+                  <span class="card-price">₦5,500</span>
+                  <button class="add-to-cart" aria-label="Add Art and Craft Kit to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🧸</div>
+              <div class="card-body">
+                <h3 class="card-name">Giant Teddy Bear</h3>
+                <p class="card-desc">Super-soft 50 cm plush toy</p>
+                <div class="card-footer">
+                  <span class="card-price">₦8,000</span>
+                  <button class="add-to-cart" aria-label="Add Giant Teddy Bear to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🍳</div>
+              <div class="card-body">
+                <h3 class="card-name">Play Kitchen Set</h3>
+                <p class="card-desc">30-piece pretend cooking set</p>
+                <div class="card-footer">
+                  <span class="card-price">₦9,500</span>
+                  <button class="add-to-cart" aria-label="Add Play Kitchen Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">💅</div>
+              <div class="card-body">
+                <h3 class="card-name">Princess Vanity Set</h3>
+                <p class="card-desc">Mirror, safe play makeup & jewels</p>
+                <div class="card-footer">
+                  <span class="card-price">₦6,300</span>
+                  <button class="add-to-cart" aria-label="Add Princess Vanity Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row girls-toys -->
+
+
+        <!-- ================================================
+             ROW 3 – BOYS' TOYS
+        ================================================ -->
+        <div class="product-row" id="boys-toys">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i> Boys' Toys
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">New</div>
+              <div class="card-img" aria-hidden="true">🚗</div>
+              <div class="card-body">
+                <h3 class="card-name">RC Racing Car</h3>
+                <p class="card-desc">Remote-controlled, 2.4 GHz, rechargeable</p>
+                <div class="card-footer">
+                  <span class="card-price">₦12,000</span>
+                  <button class="add-to-cart" aria-label="Add RC Racing Car to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">⚽</div>
+              <div class="card-body">
+                <h3 class="card-name">Football & Pump Set</h3>
+                <p class="card-desc">Size 4, durable PVC, includes pump</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,200</span>
+                  <button class="add-to-cart" aria-label="Add Football and Pump Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🦕</div>
+              <div class="card-body">
+                <h3 class="card-name">Dinosaur Figure Pack</h3>
+                <p class="card-desc">Set of 8 detailed dino figures</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,600</span>
+                  <button class="add-to-cart" aria-label="Add Dinosaur Figure Pack to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🧱</div>
+              <div class="card-body">
+                <h3 class="card-name">Building Block Set</h3>
+                <p class="card-desc">250 colourful interlocking blocks</p>
+                <div class="card-footer">
+                  <span class="card-price">₦5,800</span>
+                  <button class="add-to-cart" aria-label="Add Building Block Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🔫</div>
+              <div class="card-body">
+                <h3 class="card-name">Water Blaster Pistol</h3>
+                <p class="card-desc">Long-range water toy, 500 ml tank</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,700</span>
+                  <button class="add-to-cart" aria-label="Add Water Blaster Pistol to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row boys-toys -->
+
+
+        <!-- ================================================
+             ROW 4 – SAMPLE SCHOOL UNIFORMS
+        ================================================ -->
+        <div class="product-row" id="uniforms">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-school" aria-hidden="true"></i> Sample School Uniforms
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">Best Seller</div>
+              <div class="card-img" aria-hidden="true">👔</div>
+              <div class="card-body">
+                <h3 class="card-name">Boys' White Shirt & Shorts</h3>
+                <p class="card-desc">100% cotton, easy-iron fabric</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,800</span>
+                  <button class="add-to-cart" aria-label="Add Boys White Shirt and Shorts to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">👗</div>
+              <div class="card-body">
+                <h3 class="card-name">Girls' Pinafore Dress</h3>
+                <p class="card-desc">Navy check, A-line, inner lining</p>
+                <div class="card-footer">
+                  <span class="card-price">₦5,200</span>
+                  <button class="add-to-cart" aria-label="Add Girls Pinafore Dress to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🏫</div>
+              <div class="card-body">
+                <h3 class="card-name">Full Uniform Bundle (Boy)</h3>
+                <p class="card-desc">Shirt + trouser + tie + belt</p>
+                <div class="card-footer">
+                  <span class="card-price">₦9,500</span>
+                  <button class="add-to-cart" aria-label="Add Full Uniform Bundle Boy to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🎀</div>
+              <div class="card-body">
+                <h3 class="card-name">Full Uniform Bundle (Girl)</h3>
+                <p class="card-desc">Blouse + skirt + ribbon + socks</p>
+                <div class="card-footer">
+                  <span class="card-price">₦9,000</span>
+                  <button class="add-to-cart" aria-label="Add Full Uniform Bundle Girl to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🎒</div>
+              <div class="card-body">
+                <h3 class="card-name">PE Kit Set</h3>
+                <p class="card-desc">T-shirt + shorts + PE bag</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,900</span>
+                  <button class="add-to-cart" aria-label="Add PE Kit Set to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row uniforms -->
+
+
+        <!-- ================================================
+             ROW 5 – GIRLS' BLOUSES
+        ================================================ -->
+        <div class="product-row" id="blouses">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-shirt" aria-hidden="true"></i> Girls' Blouses
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">New</div>
+              <div class="card-img" aria-hidden="true">👚</div>
+              <div class="card-body">
+                <h3 class="card-name">Floral Puff-Sleeve Blouse</h3>
+                <p class="card-desc">Soft cotton, sizes 3–14 yrs</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,100</span>
+                  <button class="add-to-cart" aria-label="Add Floral Puff-Sleeve Blouse to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">👕</div>
+              <div class="card-body">
+                <h3 class="card-name">Classic White School Blouse</h3>
+                <p class="card-desc">Easy-iron, Peter Pan collar</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,500</span>
+                  <button class="add-to-cart" aria-label="Add Classic White School Blouse to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🌸</div>
+              <div class="card-body">
+                <h3 class="card-name">Striped Tie-Knot Blouse</h3>
+                <p class="card-desc">Casual-chic, rainbow stripes</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,800</span>
+                  <button class="add-to-cart" aria-label="Add Striped Tie-Knot Blouse to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🦋</div>
+              <div class="card-body">
+                <h3 class="card-name">Butterfly Print Blouse</h3>
+                <p class="card-desc">Lightweight chiffon, pastel tones</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,400</span>
+                  <button class="add-to-cart" aria-label="Add Butterfly Print Blouse to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">✨</div>
+              <div class="card-body">
+                <h3 class="card-name">Sequin Party Blouse</h3>
+                <p class="card-desc">Gold sequins, special occasions</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,900</span>
+                  <button class="add-to-cart" aria-label="Add Sequin Party Blouse to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row blouses -->
+
+
+        <!-- ================================================
+             ROW 6 – BOYS' TROUSERS
+        ================================================ -->
+        <div class="product-row" id="trousers">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-person" aria-hidden="true"></i> Boys' Trousers
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">Popular</div>
+              <div class="card-img" aria-hidden="true">👖</div>
+              <div class="card-body">
+                <h3 class="card-name">Classic School Trousers</h3>
+                <p class="card-desc">Grey, elasticated waist, sizes 3–16</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,500</span>
+                  <button class="add-to-cart" aria-label="Add Classic School Trousers to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🩲</div>
+              <div class="card-body">
+                <h3 class="card-name">Cargo Shorts</h3>
+                <p class="card-desc">Multi-pocket, khaki or navy</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,900</span>
+                  <button class="add-to-cart" aria-label="Add Cargo Shorts to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🌀</div>
+              <div class="card-body">
+                <h3 class="card-name">Slim-Fit Jeans</h3>
+                <p class="card-desc">Stretch denim, adjustable waist</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,100</span>
+                  <button class="add-to-cart" aria-label="Add Slim-Fit Jeans to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🏃</div>
+              <div class="card-body">
+                <h3 class="card-name">Jogger Sweatpants</h3>
+                <p class="card-desc">Fleece-lined, ribbed cuffs</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,200</span>
+                  <button class="add-to-cart" aria-label="Add Jogger Sweatpants to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🎩</div>
+              <div class="card-body">
+                <h3 class="card-name">Smart Chinos (Boys)</h3>
+                <p class="card-desc">Beige or black, formal occasions</p>
+                <div class="card-footer">
+                  <span class="card-price">₦4,600</span>
+                  <button class="add-to-cart" aria-label="Add Smart Chinos to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row trousers -->
+
+
+        <!-- ================================================
+             ROW 7 – GIRLS' SKIRTS
+        ================================================ -->
+        <div class="product-row" id="skirts">
+          <h2 class="row-heading">
+            <i class="fa-solid fa-star" aria-hidden="true"></i> Girls' Skirts
+          </h2>
+          <div class="product-grid">
+
+            <article class="product-card">
+              <div class="card-badge">New</div>
+              <div class="card-img" aria-hidden="true">💃</div>
+              <div class="card-body">
+                <h3 class="card-name">Tutu Party Skirt</h3>
+                <p class="card-desc">Multi-layer tulle, pink or lilac</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,700</span>
+                  <button class="add-to-cart" aria-label="Add Tutu Party Skirt to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">📐</div>
+              <div class="card-body">
+                <h3 class="card-name">Pleated School Skirt</h3>
+                <p class="card-desc">Navy or grey, elasticated waistband</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,600</span>
+                  <button class="add-to-cart" aria-label="Add Pleated School Skirt to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-badge sale">Sale</div>
+              <div class="card-img" aria-hidden="true">🌻</div>
+              <div class="card-body">
+                <h3 class="card-name">Floral A-Line Skirt</h3>
+                <p class="card-desc">Midi length, floral print, lined</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,300</span>
+                  <button class="add-to-cart" aria-label="Add Floral A-Line Skirt to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🦚</div>
+              <div class="card-body">
+                <h3 class="card-name">Denim Mini Skirt</h3>
+                <p class="card-desc">Stretch denim, front zip detail</p>
+                <div class="card-footer">
+                  <span class="card-price">₦2,900</span>
+                  <button class="add-to-cart" aria-label="Add Denim Mini Skirt to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="card-img" aria-hidden="true">🌈</div>
+              <div class="card-body">
+                <h3 class="card-name">Rainbow Wrap Skirt</h3>
+                <p class="card-desc">Tie-wrap, 100% cotton, washable</p>
+                <div class="card-footer">
+                  <span class="card-price">₦3,000</span>
+                  <button class="add-to-cart" aria-label="Add Rainbow Wrap Skirt to cart">
+                    <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /row skirts -->
+
+      </section><!-- /products-section -->
+
+    </main><!-- /main-content -->
+
+
+    <!-- ========================================================
+         GRID AREA: footer
+         Sticky (position: sticky) footer with social-media links.
+         We use <footer> (semantic HTML5) so screen readers can
+         identify it as the site's footer landmark.
+    ======================================================== -->
+    <footer class="site-footer" role="contentinfo">
+
+      <!-- Brand tagline -->
+      <div class="footer-brand">
+        <span class="footer-logo-icon" aria-hidden="true">👕</span>
+        <span class="footer-tagline">CHILDRENSMART – Dress Them Happy</span>
+      </div>
+
+      <!-- Social media icon links -->
+      <!-- rel="noopener noreferrer" is a security best practice
+           for links that open in a new tab (_blank).           -->
+      <nav class="social-links" aria-label="Social media links">
+
+        <a href="https://facebook.com"  class="social-link facebook"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">
+          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          <span class="social-name">Facebook</span>
+        </a>
+
+        <a href="https://instagram.com" class="social-link instagram"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          <span class="social-name">Instagram</span>
+        </a>
+
+        <a href="https://twitter.com"   class="social-link twitter"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on X (Twitter)">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          <span class="social-name">X / Twitter</span>
+        </a>
+
+        <a href="https://tiktok.com"    class="social-link tiktok"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on TikTok">
+          <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+          <span class="social-name">TikTok</span>
+        </a>
+
+        <a href="https://youtube.com"   class="social-link youtube"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          <span class="social-name">YouTube</span>
+        </a>
+
+        <a href="https://wa.me/234000000000" class="social-link whatsapp"
+           target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span class="social-name">WhatsApp</span>
+        </a>
+
+        <a href="https://pinterest.com" class="social-link pinterest"
+           target="_blank" rel="noopener noreferrer" aria-label="Visit us on Pinterest">
+          <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+          <span class="social-name">Pinterest</span>
+        </a>
+
+      </nav>
+
+      <!-- Copyright notice -->
+      <p class="footer-copy">
+        &copy; <span id="year"></span> CHILDRENSMART Ltd. All rights reserved.
+      </p>
+
+    </footer><!-- /site-footer -->
+
+  </div><!-- /page-wrapper -->
+
+
+  <!-- ============================================================
+       INLINE JAVASCRIPT (minimal – only logic that cannot be CSS)
+
+       1. Auto-update copyright year so we never have to touch it.
+       2. Slideshow: cycles hero advert slides every 3 seconds.
+       3. Smooth-scroll: makes sidebar links glide rather than jump.
+
+       JS is placed at the BOTTOM of <body> so it runs only after
+       the HTML has been fully parsed – this is a performance best
+       practice for beginners to remember.
+  ============================================================ -->
+  <script>
+    /* ---- 1. Auto-update copyright year ---- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    /* ---- 2. Hero Slideshow ---- */
+    // Grab all slide elements and all dot buttons
+    const slides = document.querySelectorAll('.slide');
+    const dots   = document.querySelectorAll('.dot');
+    let current  = 0; // tracks which slide is currently visible
+
+    /**
+     * showSlide(index)
+     * Removes 'active' class from every slide and dot,
+     * then adds 'active' to the slide and dot at the given index.
+     */
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d   => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      current = index;
+    }
+
+    // Allow clicking dots to jump to a specific slide
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.slide));
+      });
+    });
+
+    // Auto-advance slides every 3 000 milliseconds (3 seconds)
+    setInterval(() => {
+      const next = (current + 1) % slides.length; // wrap around
+      showSlide(next);
+    }, 3000);
+
+
+    /* ---- 3. Smooth-scroll for sidebar links ---- */
+    // Select every anchor whose href starts with '#'
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault(); // stop the default jump
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
