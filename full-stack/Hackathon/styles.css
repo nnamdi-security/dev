@@ -150,7 +150,7 @@ Box Model Properties
 }
 .image1:hover{
     transform: translateY(-5px);
-    box-shadow: 0px 20px 20px rgba(247, 7, 7, 0.3);
+    box-shadow: 0px 10px 30px rgba(247, 7, 7, 0.3);
 }
 
 
