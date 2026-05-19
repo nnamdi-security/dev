@@ -56,9 +56,43 @@ async function fetchAndDisplay(url){
     }
     
 }
-*/
+
 for (let i = 0; i < 1030; i++){
     console.log(i);
 }
 
 
+const numbers = [10, 20, 30, 40, 50];
+for (let i = 0; i < numbers.length; i++){
+    console.log(numbers[i]);
+}
+
+
+const countries = ['Nigeria', 'Ghana', 'kenya', 'canada', 'US', 'Biafra', 'burkina faso'];
+
+for (const country of countries){
+    console.log(country);
+}
+
+
+const car = 
+
+    {brand: 'toyota', model: 'camry', year: 2019};
+    
+
+
+for (const key in car){
+    console.log(key, car[key]);
+}
+*/
+
+// While Loop
+let count = 1;
+while(count <= 10){
+    console.log(count);
+    count++
+}
+
+const colors = [];
+colors.push('Red', 'Blue', 'Green');
+console.log(colors);
