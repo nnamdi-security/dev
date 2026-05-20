@@ -4,58 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/output.css">
 </head>
 <body>
     <header class="navbar">
-        <div class="nav-container"
+        <div class="nav-container">
+
+            <a href="#hero" class="nav-logo">
+                <img class="logo" src="" alt="">
+            </a>
+
+            <nav class="nav-links">
+                <div class="flex-container">
+                    <div class="flex-item"><a href="#hero">Home</a></div>
+                    <div class="flex-item"><a href="#services">Services</a></div>
+                    <div class="flex-item"><a href="#about">About</a></div>
+                    <div class="flex-item"><a href="#contact">Contact</a></div>
+                </div>
+            </nav>
+
+            <button class="nav-btn"><a>Get Started</a></button>
+
+        </div>
     </header>
+
     <main>
         <section class="hero">
             <div class="flex-container">
-                <div>
-                    <h1></h1>
-                    <p></p>
+
+                <div class="flex-item">
+                    <h1>Build Your Digital future</h1>
+                    <p>Transform your business with cutting-edge solutions that drive growth and innovation in the digital landscape.</p>
                     <div>
-                        <button></button>
-                        <button></button>
+                        <button class="hero-btn1">Start Your Journey</button>
+                        <button class="hero-btn2">Learn More</button>
                     </div>
                 </div>
-                <div>
-                    <img>
+                <div class="flex-item">
+                    <img class="hero-image" src="./hero-image.png" alt="A laptop in a dark room showing various metrics" width="200">
                 </div>
             </div>
+
         </section>
         <section class="service">
             <h2></h2>
             <p></p>
-            <div>
+
+            <div class="flex-container">
                 <div class="card">
-                    <img class="card__image">
+                    <img class="card__image" src="./code-solid-full.svg" alt="code icon">
                     <div class="card__body">
-                        <h3 class="card__title"></h3>
-                        <p class="card__text"></p>
+                        <h3 class="card__title">Web Development</h3>
+                        <p class="card__text">custom websites and web applications built with modern technologies for optional performance.</p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="card__image">
                     <div class="card__body">
-                        <h3 class="card__title"></h3>
-                        <p class="card__text"></p>
+                        <h3 class="card__title">Mobile Apps</h3>
+                        <p class="card__text">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card__image">
+                    <img class="card__image" src="" alt="" >
                     <div class="card__body">
-                        <h3 class="card__title"></h3>
-                        <p class="card__text"></p>
+                        <h3 class="card__title">Digital Marketing</h3>
+                        <p class="card__text">Strategic marketing campaigns that boost your online presence and drive conversions.</p>
                     </div>
                 </div>
             </div>
         </section>
         <section class="about">
-            <div>
-                <img>
+            <div class="flex container">
+                <div class="image-container"></div>
+                <div>
+                    <h2>About Nexus</h2>
+                    <p>We are a forward-thinking technology company dedicated to jelping businesses navigate the digital transformation journey. With years of experience and a passion for innovation, we deliver solutions that matter.</p>
+                </div>
+                <p class="flex">
+                    <span class="project-figure">150+</span>
+                    <span class="project-word">projects Completed</span>
+                </p>
+            </div>
+        </section>
+        <section class="about">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your project? Let's discuss how we can help you achieve your goals.</p>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a href="mailto:petersaint515@gmail.com">hello2nexus.com</a>
+                </div>
+                <div class="flex-item"></div>
             </div>
         </section>
     </main>
