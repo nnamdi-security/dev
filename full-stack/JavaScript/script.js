@@ -1,4 +1,4 @@
-/*let x = 1;
+let x = 1;
 
 function hotFunction(){
     return x + x;
@@ -20,14 +20,14 @@ const students = [
 ];
 
 function filterStudents(students){
-    return students.filter(students => (students.score >= 70));
+    return students.filter(student => (student.score >= 70));
 }
 const passedStdents = filterStudents(students);
 console.log(passedStdents);
 
 
 function filterProducts(products){
-    return products.filter(products => products.price >= 500);
+    return products.filter(product => product.price >= 500);
 }
 
 const products = 
@@ -108,17 +108,17 @@ console.log(foods);
 
 //forEach()
 const scores = [45, 67, 89, 90];
-scores.forEach(scores => console.log(scores));
+scores.forEach(score => console.log(score));
 
 //map()
 const prices = [100, 200, 300];
-const doubled = prices.map(prices => prices * 2);
+const doubled = prices.map(price => price * 2);
 console.log(doubled);
 
 
 //filter()
 const ages = [12, 18, 25, 15, 30];
-const adults = ages.filter(ages => ages >= 18);
+const adults = ages.filter(age => age >= 18);
  console.log(adults);
 
 
@@ -128,40 +128,6 @@ const adults = ages.filter(ages => ages >= 18);
 
  }
  console.log(greet('Nnamdi'));
-
+*/
  const greet = (name) => `Hello ${name}`;
  console.log(greet('Amara'));
-*/
-
-const heading = document.getElementById("title");
-heading.textContent = "I'm learning DOM manipulation";
-
-const paragraph = document.getElementById("message");
-paragraph.style.color = 'blue';
-paragraph.style.fontSize = '30px';
-
-const button = document.querySelector('button');
-console.log(button);
-
-const paragraphElement = document.getElementById("text");
-paragraphElement.classList.add('active');
-paragraphElement.classList.remove("active")
-
-const btn = document.getElementById("btn");
-btn.addEventListener('click', function(){
-    console.log('Button was clicked!')
-});
-
-const head = document.getElementById('heading');
-const change = document.getElementById("changeBtn");
-change.addEventListener('click', function(){
-    head.textContent = "Welcome to JavaScript DOM";
-});
-
-const allParagraph = document.querySelectorAll('p');
-console.log(allParagraph);
-
-const bgLightBlue = document.getElementById('changeBg');
-bgLightBlue.addEventListener('click', function(){
-    document.body.style.backgroundColor = 'lightblue'; 
-})
