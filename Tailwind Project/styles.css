@@ -1,6 +1,13 @@
-/* Navigation with logo on the left and links on the right */
+:root {
+    --dark-blue:  #0f172a ;
+    --blue-shade:  #152032;
+    --light-blue:  #3b82f6 ;
+    --purple:  #a855f7 ;
+    --Green:  #22c55e;
+}
 
-nav {
+/* Navigation with logo on the left and links on the right */
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,4 +52,8 @@ body {
     body {
         max-width: 1200px;
     }
+}
+
+h1{
+    color: var(--light-blue);
 }
