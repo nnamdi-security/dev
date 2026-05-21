@@ -19,6 +19,7 @@ html{
 }
 
 body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--dark-blue);
     color: white;
     line-height: 1.75;
@@ -32,6 +33,12 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+}
+
+h1, h2, h3{
+    font-family: 'Georgia', 'Times New Roman', serif;  
+    font-weight: 700;
+    line-height: 1.2; 
 }
 
 a {
@@ -97,15 +104,57 @@ h1{
     font-size: 50px;
     font-weight: 700;
     line-height: 1;
-}
-h1:nth-child(3){
-    color: var(--light-blue);
+    margin-bottom: 20px;
 }
 
+.h1-third-word{ color: var(--light-blue);}
+
+.hero-btn1{
+    background: var(--light-blue);
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 15px;
+}
+
+.hero-btn2{
+    border: 1px solid grey;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-left: 5px;
+}
+
+.service{
+    background-color: var(--blue-shade);
+}
+.service h2, p{
+    text-align: center;
+}
+
+
 /* Equal width cards */
-.card {
+.card-flex {
+    display: flex;
     flex: 1 1 300px;
     min-width: 0;      /* This prevent overflow */
+    gap: 1rem;
+}
+
+.card__image{
+    width: 50px;
+    height: 50px;
+    margin: 20px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.image1{background-color: var(--light-blue);}
+.image2{background: var(--Green);}
+.image3{background: var(--purple);}
+
+
+.card{
+    border: 0.5px solid grey;
 }
 
 /* Sticky footer */
