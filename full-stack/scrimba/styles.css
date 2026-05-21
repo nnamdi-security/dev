@@ -1,0 +1,128 @@
+.button1{
+    background: yellow;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: medium;
+    transition: all 0.5s ease;
+}
+.button1:hover{
+    background-color: aqua;
+    color: black;
+    transform: scale(1.05);
+}
+
+.button2{
+
+}
+
+.button2{
+    background: orange;
+    padding: 10px 20px;
+    color: white;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.button2:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9{
+    background: rgb(173, 170, 170);
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+.item1{
+    transition: all 0.5s ease;
+}
+.item1:hover{
+    transform: scale(1.5);
+    color: red;
+    background: rgb(73, 243, 51);
+}
+
+.item2{
+    transition: all 0.5s ease;
+}
+.item2:hover{
+    transform: translateY(-50px) rotate(45deg) scale(1.52);
+    color: green;
+    background: rgb(228, 26, 211);
+}
+
+.item3{
+    transition: all 0.5s ease;
+}
+.item3:hover{
+    transform: rotate(-90deg);
+    color: rgb(0, 255, 76);
+    background: rgb(235, 42, 116);
+}
+
+.item4{
+    transition: all 0.5s ease;
+}
+.item4:hover{
+    transform: translate(50px, -20px);
+    color: rgb(27, 26, 26);
+    background: rgb(10, 10, 245);
+}
+
+.item5{
+    transition: all 0.5s ease;
+}
+.item5:hover{
+    transform: skew(10deg, 5deg);
+    color: rgb(198, 236, 29);
+    background: rgb(79, 79, 240);
+}
+
+.item6{
+    transition: all 0.5s ease;
+}
+.item6:hover{
+    transform: scaleX(2);
+    color: rgb(40, 161, 241);
+    background: rgb(224, 224, 233);
+}
+
+.item7{
+    transition: all 0.5s ease;
+}
+.item7:hover{
+    transform: rotate(45deg) translateX(100px);
+    color: rgb(243, 166, 166);
+    background: rgb(41, 41, 245);
+}
+
+.item8{
+    transition: all 0.5s ease;
+}
+.item8:hover{
+    transform: translateX(100px) rotate(45deg);
+    color: red;
+    background: darkblue;
+}
+
+.item9{
+    transition: transform 0.5s ease'
+                box-shadow 0.5s ease;
+}
+.item9:hover{
+    transform: scale(1.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    color: red;
+    background: darkblue;
+}
+

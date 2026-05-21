@@ -1,0 +1,466 @@
+<!-- 
+File: index.html
+Project: CHILDRENSMART Landing Page
+Author: Your Team
+Description:
+This is the main HTML structure for the CHILDRENSMART landing page.
+We are starting with:
+1. Header/Menu Section
+2. Left Sidebar Navigation
+3. Hero Section
+4. Product Display Section
+5. Sticky Footer
+
+NOTE:
+- Use this with a separate CSS file called style.css
+- All sections contain comments for easy understanding
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website Title -->
+    <title>CHILDRENSMART</title>
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         MAIN PAGE CONTAINER
+         Using CSS Grid Layout
+    ========================================================== -->
+    <div class="container">
+
+        <!-- =====================================================
+             HEADER SECTION
+             Contains:
+             - Logo
+             - Navigation Menu
+             - Search Bar
+        ====================================================== -->
+        <header class="header">
+
+            <!-- Logo Area -->
+            <div class="logo">
+                <h1>CHILDRENSMART</h1>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-nav">
+
+                <!-- PRODUCTS DROPDOWN -->
+                <div class="dropdown">
+                    <button class="dropbtn">Products</button>
+
+                    <div class="dropdown-content">
+                        <a href="#shoes">Children's Shoes</a>
+                        <a href="#girls-toys">Girls' Toys</a>
+                        <a href="#boys-toys">Boys' Toys</a>
+                    </div>
+                </div>
+
+                <!-- SERVICES DROPDOWN -->
+                <div class="dropdown">
+                    <button class="dropbtn">Services</button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Delivery</a>
+                        <a href="#">Bulk Orders</a>
+                        <a href="#">Gift Packaging</a>
+                    </div>
+                </div>
+
+                <!-- CUSTOMER SERVICE DROPDOWN -->
+                <div class="dropdown">
+                    <button class="dropbtn">Customer Service</button>
+
+                    <div class="dropdown-content">
+                        <a href="#">FAQs</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Track Order</a>
+                    </div>
+                </div>
+
+                <!-- CONTACT US DROPDOWN -->
+                <div class="dropdown">
+                    <button class="dropbtn">Contact Us</button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Email</a>
+                        <a href="#">WhatsApp</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+        </header>
+
+        <!-- =====================================================
+             HERO SECTION
+             This section contains:
+             1. Left Sidebar
+             2. Featured Product Area
+             3. Another Featured Area
+             4. Right Advert Section
+        ====================================================== -->
+        <section class="hero-section">
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar-left">
+
+                <h3>Categories</h3>
+
+                <ul>
+                    <li><a href="#shoes">Children's Shoes</a></li>
+
+                    <li><a href="#girls-toys">
+                        Girls' Toys
+                    </a></li>
+
+                    <li><a href="#boys-toys">
+                        Boys' Toys
+                    </a></li>
+
+                    <li><a href="#uniforms">
+                        Sample School Uniforms
+                    </a></li>
+
+                    <li><a href="#girls-blouses">
+                        Girls' Blouses
+                    </a></li>
+
+                    <li><a href="#boys-trousers">
+                        Boys' Trousers
+                    </a></li>
+
+                    <li><a href="#girls-skirts">
+                        Girls' Skirts
+                    </a></li>
+                </ul>
+
+            </aside>
+
+            <!-- HERO FEATURE AREA 1 -->
+            <div class="hero-feature">
+                <h2>Top Selling Products</h2>
+
+                <p>
+                    Discover trending children's fashion and accessories.
+                </p>
+            </div>
+
+            <!-- HERO FEATURE AREA 2 -->
+            <div class="hero-feature">
+                <h2>Back To School Deals</h2>
+
+                <p>
+                    Get affordable uniforms and school essentials.
+                </p>
+            </div>
+
+            <!-- RIGHT ADVERTISEMENT SLIDER -->
+            <aside class="sidebar-right">
+
+                <div class="advert-box">
+                    <h3>Special Offers</h3>
+
+                    <p>50% OFF School Shoes</p>
+                </div>
+
+            </aside>
+
+        </section>
+
+        <!-- =====================================================
+             MAIN PRODUCT SECTION
+             7 Product Rows
+             Each row contains 5 product cards
+        ====================================================== -->
+        <main class="main-content">
+
+            <!-- ================================
+                 ROW 1 - SHOES
+            ================================= -->
+            <section id="shoes" class="product-row">
+
+                <h2>Children's Shoes</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Male Sandals</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Female Sandals</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Laced Shoes</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Non-Laced Shoes</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Canvas Shoes</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 2 - GIRLS TOYS
+            ================================= -->
+            <section id="girls-toys" class="product-row">
+
+                <h2>Girls' Toys</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Dolls</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Tea Sets</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Kitchen Toys</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Fashion Kits</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Princess Toys</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 3 - BOYS TOYS
+            ================================= -->
+            <section id="boys-toys" class="product-row">
+
+                <h2>Boys' Toys</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Cars</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Robots</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Football Toys</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Building Blocks</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Helicopter Toys</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 4 - SCHOOL UNIFORMS
+            ================================= -->
+            <section id="uniforms" class="product-row">
+
+                <h2>Sample School Uniforms</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Nursery Uniform</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Primary Uniform</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Sports Wear</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>School Sweater</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>School Socks</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 5 - GIRLS BLOUSES
+            ================================= -->
+            <section id="girls-blouses" class="product-row">
+
+                <h2>Girls' Blouses</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>White Blouse</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Pink Blouse</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Long Sleeve</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Short Sleeve</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Floral Blouse</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 6 - BOYS TROUSERS
+            ================================= -->
+            <section id="boys-trousers" class="product-row">
+
+                <h2>Boys' Trousers</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Khaki Trousers</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Jeans</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Joggers</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>School Trousers</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Short Knickers</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================================
+                 ROW 7 - GIRLS SKIRTS
+            ================================= -->
+            <section id="girls-skirts" class="product-row">
+
+                <h2>Girls' Skirts</h2>
+
+                <div class="product-container">
+
+                    <div class="product-card">
+                        <h3>Pleated Skirt</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Jean Skirt</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Mini Skirt</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>School Skirt</h3>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Flared Skirt</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- =====================================================
+             FOOTER SECTION
+             Sticky Footer with Social Media Links
+        ====================================================== -->
+        <footer class="footer">
+
+            <p>Follow Us On:</p>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

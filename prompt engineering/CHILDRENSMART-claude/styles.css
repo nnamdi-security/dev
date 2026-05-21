@@ -1,0 +1,1075 @@
+/* ================================================================
+   styles.css  –  CHILDRENSMART Landing Page Stylesheet
+   ----------------------------------------------------------------
+   HOW THIS FILE IS ORGANISED (use Ctrl+F to jump to sections):
+     1. CSS CUSTOM PROPERTIES (design tokens / variables)
+     2. RESET & BASE
+     3. PAGE WRAPPER  – CSS Grid layout root
+     4. HEADER  (grid-area: header)
+        4a. Logo
+        4b. Navigation & Dropdowns
+        4c. Search Bar
+     5. LEFT SIDEBAR  (grid-area: left-sidebar)
+     6. MAIN CONTENT  (grid-area: main)
+        6a. Hero Section
+        6b. Hero Slideshow (sidebar-right inside hero)
+        6c. Product Section – rows & cards
+     7. FOOTER  (grid-area: footer)
+     8. UTILITY CLASSES
+     9. RESPONSIVE  – mobile / tablet breakpoints
+   ================================================================ */
+
+
+/* ================================================================
+   1. CSS CUSTOM PROPERTIES  (design tokens)
+   ----------------------------------------------------------------
+   Why use variables?
+   • Change one value here → updates every element that uses it.
+   • Makes theming / rebranding very fast.
+   Defined on :root so they are globally available.
+   ================================================================ */
+:root {
+  /* Brand colours */
+  --color-primary:       #d32f2f;   /* Red – header, accents         */
+  --color-primary-dark:  #b71c1c;   /* Darker red for hover states   */
+  --color-secondary:     #ff7043;   /* Warm orange – CTA buttons     */
+  --color-accent:        #ffd54f;   /* Yellow – badges, highlights   */
+  --color-white:         #ffffff;
+  --color-light:         #fff8f5;   /* Off-white page background     */
+  --color-sidebar-bg:    #fff3e0;   /* Sidebar warm tint             */
+  --color-card-bg:       #ffffff;
+  --color-text-dark:     #212121;
+  --color-text-muted:    #757575;
+  --color-border:        #ffe0b2;
+  --color-hero-bg:       #ffebee;   /* Hero strip background         */
+
+  /* Typography */
+  --font-display: 'Fredoka One', cursive;   /* headings & logo       */
+  --font-body:    'Nunito', sans-serif;     /* body text             */
+
+  /* Spacing scale */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+
+  /* Border radius */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  /* Shadows */
+  --shadow-card:   0 2px 12px rgba(0,0,0,0.09);
+  --shadow-header: 0 3px 14px rgba(211,47,47,0.25);
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-med:  0.30s ease;
+}
+
+
+/* ================================================================
+   2. RESET & BASE STYLES
+   ----------------------------------------------------------------
+   A minimal reset removes browser-specific defaults so our own
+   styles apply predictably in Chrome, Firefox, Safari, Edge, etc.
+   ================================================================ */
+
+/* Box-sizing: border-box means padding & border are INCLUDED in
+   an element's declared width/height. This is almost always what
+   we want and avoids confusing layout bugs. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scroll for the whole page (works in modern browsers) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  min-height: 100vh;   /* ensures footer stays at the bottom */
+}
+
+/* Remove default list styling where we apply our own */
+ul, ol {
+  list-style: none;
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make links inherit text colour unless explicitly styled */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ================================================================
+   3. PAGE WRAPPER  –  CSS GRID ROOT
+   ----------------------------------------------------------------
+   This div wraps the ENTIRE page and defines the three-area grid:
+     Row 1  – header (spans all 3 columns)
+     Row 2  – left-sidebar | main | right-sidebar
+     Row 3  – footer (spans all 3 columns)
+
+   grid-template-columns controls how wide each column is:
+     • 220px       → left sidebar fixed width
+     • 1fr         → main section takes remaining space (flexible)
+     • 260px       → right sidebar / advert column fixed width
+   ================================================================ */
+.page-wrapper {
+  display: grid;
+
+  /* Named areas – each string is one row, each word is one cell */
+  grid-template-areas:
+    'header       header       header'
+    'left-sidebar main         right-sidebar'
+    'footer       footer       footer';
+
+  /* Column widths: sidebar | flexible main | advert panel */
+  grid-template-columns: 220px 1fr 260px;
+
+  /* Row heights:
+       header – auto (fits its content)
+       middle – fill remaining viewport space
+       footer – auto                              */
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100vh;
+}
+
+
+/* ================================================================
+   4. HEADER  (grid-area: header)
+   ----------------------------------------------------------------
+   The red bar running across the top of the page.
+   Uses its own flexbox to arrange:
+     [LOGO]  [NAV MENU]  [SEARCH BAR]
+   in a single horizontal row.
+   ================================================================ */
+.site-header {
+  /* Place this element in the 'header' grid area */
+  grid-area: header;
+
+  /* Flexbox for internal layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* logo left, search right */
+  gap: var(--space-md);
+
+  /* Red background (the "red-colored frame" requirement) */
+  background-color: var(--color-primary);
+
+  /* Padding: top/bottom 12px, left/right 24px */
+  padding: 12px var(--space-lg);
+
+  /* Subtle shadow under the header */
+  box-shadow: var(--shadow-header);
+
+  /* Header sits on top of all other elements when scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* ---- 4a. LOGO ---- */
+
+/* .logo is the <a> tag wrapping the logo; flex makes the icon
+   and text sit side-by-side */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;   /* prevent the logo from shrinking */
+}
+
+/* Colourful circle badge behind the emoji */
+.logo-icon {
+  font-size: 2rem;
+  background-color: var(--color-white);
+  border-radius: 50%;   /* makes it a perfect circle */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Brand name container */
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* "CHILDREN" in white */
+.logo-children {
+  color: var(--color-white);
+}
+
+/* "SMART" in yellow so the two words contrast */
+.logo-smart {
+  color: var(--color-accent);
+}
+
+
+/* ---- 4b. NAVIGATION MENU ---- */
+
+/* The <nav> itself uses flex to space the <ul> */
+.main-nav {
+  flex: 1;   /* takes all available space between logo & search */
+}
+
+/* Horizontal list of top-level nav items */
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+/* Each <li> is positioned relative so the dropdown can be
+   positioned absolutely relative to it */
+.nav-item {
+  position: relative;
+}
+
+/* Top-level link button look */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* Hover state: slightly lighter red background */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Tiny chevron icon next to each nav label */
+.nav-arrow {
+  font-size: 0.65rem;
+  transition: transform var(--transition-fast);
+}
+
+/* Rotate the chevron when hovering the parent li */
+.nav-item:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/* ---- Dropdown panel ---- */
+/* Hidden by default; becomes visible when parent <li> is hovered */
+.dropdown {
+  display: none;   /* hidden – toggled to block on hover */
+  position: absolute;
+  top: calc(100% + 4px);   /* just below the nav-link */
+  left: 0;
+  min-width: 180px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 2000;   /* must be above everything else */
+  border-top: 3px solid var(--color-primary);
+}
+
+/* Show dropdown on hover of the parent li */
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Individual dropdown links */
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              padding-left var(--transition-fast);
+}
+
+/* Hover: red background, white text, indent link */
+.dropdown-item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-left: 22px;
+}
+
+
+/* ---- 4c. SEARCH BAR ---- */
+
+/* Container aligns input + button side-by-side */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;   /* clips button corners inside the pill */
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  width: 210px;
+  background: transparent;
+  color: var(--color-text-dark);
+}
+
+/* Remove the default browser 'x' clear button in some browsers */
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-btn {
+  background-color: var(--color-primary);
+  border: none;
+  color: var(--color-white);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition-fast);
+  height: 100%;
+}
+
+.search-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+
+/* ================================================================
+   5. LEFT SIDEBAR  (grid-area: left-sidebar)
+   ----------------------------------------------------------------
+   Sticky so it stays visible as the user scrolls the main section.
+   ================================================================ */
+.sidebar-left {
+  grid-area: left-sidebar;
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-md) 0;
+
+  /* Sticky positioning:
+       top: 62px  =  approx header height, so it starts just
+       below the header without overlapping it.               */
+  position: sticky;
+  top: 62px;
+  height: calc(100vh - 62px);
+  overflow-y: auto;   /* scroll if categories overflow the height */
+}
+
+/* "Categories" heading inside the sidebar */
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  padding: var(--space-sm) var(--space-md) var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-sm);
+}
+
+/* The vertical list of category links */
+.sidebar-list {
+  display: flex;
+  flex-direction: column;   /* stacked vertically */
+}
+
+/* Each sidebar link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px var(--space-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  border-left: 3px solid transparent;   /* invisible border, shown on hover */
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+/* Hover: red left border + tinted background */
+.sidebar-link:hover {
+  background-color: #ffe0b2;
+  border-left-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Font Awesome icon inside each sidebar link */
+.sidebar-link i {
+  width: 18px;         /* fixed width keeps text aligned */
+  text-align: center;
+  color: var(--color-primary);
+}
+
+
+/* ================================================================
+   6. MAIN CONTENT  (grid-area: main)
+   ================================================================ */
+.main-content {
+  grid-area: main;
+  padding: 0 0 var(--space-xl);
+  overflow-x: hidden;
+}
+
+
+/* ---- 6a. HERO SECTION ---- */
+
+/* The hero strip across the top of the main content area.
+   Height is 35vh (35% of the viewport height). */
+.hero-section {
+  display: grid;
+  /* 3 columns: featured products | main banner | slideshow */
+  grid-template-columns: 200px 1fr 260px;
+
+  height: 35vh;
+  min-height: 220px;
+  background-color: var(--color-hero-bg);
+  overflow: hidden;
+}
+
+/* ---- Hero Left: featured products ---- */
+.hero-featured {
+  padding: var(--space-md);
+  background-color: #fff3e0;
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.hero-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Grid of two mini product thumbnails */
+.hero-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  height: calc(100% - 30px);
+}
+
+/* Individual thumbnail card in the hero */
+.hero-product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.hero-product-card:hover {
+  transform: translateY(-3px);
+}
+
+.hero-product-img {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.hero-product-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.hero-product-price {
+  font-size: 0.68rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ---- Hero Centre: main promotional banner ---- */
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+
+  /* Colourful gradient matching the brand */
+  background: linear-gradient(135deg, #ffcdd2 0%, #fff9c4 60%, #c8e6c9 100%);
+}
+
+.hero-banner-art {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-sm);
+  animation: float 3s ease-in-out infinite; /* gentle floating effect */
+}
+
+/* "float" keyframe animation – moves element up and down */
+@keyframes float {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-8px); }
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+}
+
+.hero-subline {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+/* "Shop Now" call-to-action button */
+.hero-cta {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  padding: 10px 28px;
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.hero-cta:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.05);
+}
+
+
+/* ---- 6b. HERO SLIDESHOW  (sidebar-right area) ---- */
+
+/* This div occupies the RIGHT column of the hero AND fills the
+   grid-area: right-sidebar slot in the page grid.
+   We position slides absolutely within it. */
+.hero-slideshow {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual slide – full size, hidden by default */
+.slide {
+  position: absolute;
+  inset: 0;   /* shorthand for top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+  opacity: 0;               /* invisible */
+  transform: translateX(30px); /* slightly to the right */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;     /* inactive slides don't intercept clicks */
+}
+
+/* The active (visible) slide */
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Colour each slide differently */
+.slide-1 { background-color: #880e4f; }   /* deep pink  */
+.slide-2 { background-color: #1a237e; }   /* deep navy  */
+.slide-3 { background-color: #1b5e20; }   /* deep green */
+
+/* Big emoji on each slide */
+.slide-emoji {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Slide caption text */
+.slide-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-white);
+  line-height: 1.4;
+}
+
+/* Dot navigation buttons at the bottom of the slideshow */
+.slide-dots {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  z-index: 10;
+}
+
+/* Each dot is a small circle button */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+/* Active dot is filled white */
+.dot.active {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+/* Override grid-area for this element since it's inside <main>
+   but we want it to visually fill the right-sidebar column
+   of the hero row. The page grid handles the outer right-sidebar
+   area automatically because .sidebar-right is a direct child. */
+.sidebar-right {
+  grid-area: right-sidebar;
+}
+
+
+/* ---- 6c. PRODUCT SECTION – rows & cards ---- */
+
+.products-section {
+  padding: var(--space-lg) var(--space-lg) 0;
+}
+
+/* Each product row (one per category) */
+.product-row {
+  margin-bottom: var(--space-xl);
+
+  /* scroll-margin-top ensures anchor links account for the
+     sticky header height so the heading isn't hidden behind it */
+  scroll-margin-top: 72px;
+}
+
+/* Category heading above each row */
+.row-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+
+  /* Colourful underline using a gradient */
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, var(--color-primary), var(--color-accent)) 1;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* 5-column grid of product cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+}
+
+/* ---- Individual product card ---- */
+.product-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;         /* needed for the badge */
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border);
+}
+
+/* Lift the card on hover */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(211,47,47,0.18);
+}
+
+/* Badge (e.g. "New", "Sale", "Best Seller") */
+.card-badge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+/* "Sale" badge gets a different colour (orange) */
+.card-badge.sale {
+  background-color: var(--color-secondary);
+}
+
+/* Product image area – uses an emoji as a placeholder;
+   in a real project this would be an <img> tag */
+.card-img {
+  font-size: 3.5rem;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  background: linear-gradient(180deg, #fff9f9 0%, #ffffff 100%);
+  transition: transform var(--transition-med);
+}
+
+/* Slightly zoom the emoji on card hover */
+.product-card:hover .card-img {
+  transform: scale(1.12);
+}
+
+/* Text content area below the image */
+.card-body {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;   /* takes all remaining vertical space in the card */
+}
+
+/* Product name */
+.card-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+/* Short product description */
+.card-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  flex: 1;   /* pushes the footer (price + button) to the bottom */
+  margin-bottom: var(--space-sm);
+}
+
+/* Row containing price and add-to-cart button */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* Price label */
+.card-price {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+/* Add-to-cart icon button */
+.add-to-cart {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.add-to-cart:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.15);
+}
+
+
+/* ================================================================
+   7. FOOTER  (grid-area: footer)
+   ----------------------------------------------------------------
+   Sticky footer that stays at the bottom of the viewport.
+   ================================================================ */
+.site-footer {
+  grid-area: footer;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: var(--space-md) var(--space-lg);
+
+  /* Stick to the bottom of the viewport even when scrolling */
+  position: sticky;
+  bottom: 0;
+  z-index: 900;
+
+  /* Internal layout: brand | social links | copyright */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Brand area (emoji + tagline) */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-logo-icon {
+  font-size: 1.4rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-accent);
+}
+
+/* Social links container */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* Each social icon link */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform var(--transition-fast),
+              filter var(--transition-fast);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.15);
+}
+
+/* Unique brand colours for each platform */
+.social-link.facebook  { background-color: #1877f2; color: #fff; }
+.social-link.instagram { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
+.social-link.twitter   { background-color: #000000; color: #fff; }
+.social-link.tiktok    { background-color: #010101; color: #fff; border: 1px solid #69c9d0; }
+.social-link.youtube   { background-color: #ff0000; color: #fff; }
+.social-link.whatsapp  { background-color: #25d366; color: #fff; }
+.social-link.pinterest { background-color: #e60023; color: #fff; }
+
+/* The text label beside each icon */
+.social-name {
+  /* Hidden on smaller screens via media query below */
+  display: inline;
+}
+
+/* Copyright notice */
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+
+/* ================================================================
+   8. UTILITY CLASSES
+   ================================================================ */
+
+/* Visually hidden – accessible text for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+/* ================================================================
+   9. RESPONSIVE  –  Breakpoints
+   ----------------------------------------------------------------
+   Media queries are written MOBILE-LAST here (desktop-first
+   approach) because this is a desktop-heavy e-commerce page.
+
+   Breakpoints:
+     @media (max-width: 1200px)  – large tablet / small laptop
+     @media (max-width: 768px)   – tablet portrait / large phone
+     @media (max-width: 480px)   – small phone
+   ================================================================ */
+
+/* ---- Large tablet / small laptop (≤ 1200px) ---- */
+@media (max-width: 1200px) {
+
+  /* Collapse to 2 columns: hide left sidebar, expand main */
+  .page-wrapper {
+    grid-template-areas:
+      'header       header'
+      'left-sidebar main'
+      'footer       footer';
+    grid-template-columns: 180px 1fr;
+  }
+
+  /* Hide right sidebar column in this breakpoint
+     (hero slideshow will collapse into main banner) */
+  .sidebar-right {
+    display: none;
+  }
+
+  /* Hero adjusts to 2 columns */
+  .hero-section {
+    grid-template-columns: 180px 1fr;
+  }
+
+  /* 4 product cards per row instead of 5 */
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Shorten search input */
+  .search-input {
+    width: 160px;
+  }
+}
+
+/* ---- Tablet portrait / large phone (≤ 768px) ---- */
+@media (max-width: 768px) {
+
+  /* Single-column layout: everything stacks */
+  .page-wrapper {
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar becomes a horizontal scrolling strip at top of main */
+  .sidebar-left {
+    position: static;  /* no longer sticky */
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* Sidebar links become horizontal */
+  .sidebar-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .sidebar-link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .sidebar-link:hover {
+    border-left-color: transparent;
+    border-bottom-color: var(--color-primary);
+  }
+
+  /* Hero becomes single column */
+  .hero-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  /* Hide left hero panel on mobile */
+  .hero-featured {
+    display: none;
+  }
+
+  /* 2 product cards per row */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hide social link text – show icons only */
+  .social-name {
+    display: none;
+  }
+
+  /* Compact header */
+  .site-header {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .search-input {
+    width: 120px;
+  }
+}
+
+/* ---- Small phone (≤ 480px) ---- */
+@media (max-width: 480px) {
+
+  /* Single card per row on very small screens */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-headline {
+    font-size: 1.4rem;
+  }
+
+  /* Stack footer items vertically */
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}

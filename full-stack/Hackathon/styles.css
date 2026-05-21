@@ -1,0 +1,266 @@
+:root{
+    --primary: #00FF66;
+    --bg-dark: #0A0A0A;
+    
+}
+
+
+
+
+/* Default: padding/border ADD to width */
+/*.box { width: 300px; padding: 20px; }
+/* Total width: 300 + 20 + 20 = 340px */
+
+/* Better: padding/border INCLUDED in width */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*.box { width: 300px; padding: 20px; }
+/* Total width: 300px exactly */
+
+html{
+    font-size: 16px;
+}
+/* Descendant (space) - any nested */
+nav a{
+    color: rgb(15, 45, 241);
+}
+
+/* Child (>) - direct children only */
+ul > li{
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Adjacent sibling (+) - immediately after */
+h2 + p{
+    margin-top: 0;
+    background-color: aqua;
+}
+
+/* General sibling (~) - any sibling after */
+h2 ~ p{
+    color: blue;
+}
+
+
+body{
+   /* Font family with fallbacks */
+   font-family:Arial, Helvetica, sans-serif;
+   
+   /* Size */
+    /* Size */
+    font-size: 16px;      /* absolute */
+    font-size: 1rem;      /* relative to root */
+    font-size: 1.2em;     /* relative to parent */
+
+     /* Weight */
+     font-weight: 400; /* normal */
+     /*font-weight: 700; /* bold */
+
+     /* style */
+     font-style: normal;
+
+     /* Line height */
+     line-height: 1.2;  /* unitless recommended */
+
+     /* Modeern: oklch (better for gradients) */
+     color: oklch(17.764% 0.00002 271.152);
+     background-color: rgb(117, 114, 114);
+
+     /* Sticky footer */
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+}
+main{ flex: 1;}
+
+
+h1{
+    word-spacing: -0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 8px rgba(20, 245, 31, 0.3);
+}
+
+
+p{
+    text-align: left;
+    
+}
+
+/*
+====================================================
+Backgrounds
+====================================================
+*/
+#hero{
+    /*background-color: #0a0c10;
+    background-image: url(./images/pexels-pat-whelen-2913248-8650941.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;*/
+
+     /* Shorthand */
+    /*background: #0A0A0A url('bg.jpg') center/cover no-repeat fixed;*/
+
+    /*Gradient*/
+    background: linear-gradient(right, #00ff66, #0066FF);
+    background: radial-gradient(circle, #00FF66, transparent);
+}
+.nav-links ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    gap: 20px;
+}
+
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+/*
+====================================================
+Box Model Properties
+====================================================
+*/
+.image1{
+     /* Content size */
+    width: 300px;
+    height: 200px;
+
+    /* Padding (inside border) */
+    padding: 10px;
+
+     /* Border */
+     border: solid 2px #00FF66;
+     border-radius: 8px;
+
+    /* Margin (outside border) */
+    margin: 20px;
+    /*margin: 0 auto;  /* center horizontal */
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease; 
+}
+.image1:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(247, 7, 7, 0.3);
+}
+
+
+.image2{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    border: solid 2px #00FF66;
+    border-radius: 8px;
+    margin: 20px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0; transform: translateY(20px);}
+    to   {opacity: 1; transform: translateY(0);}
+}
+/*
+====================================================
+Pseudo-classes and Pseudo-elements
+====================================================
+*/
+
+/* Interactive states */
+a:hover{color: darkred;}
+a:active{color:aqua;}
+button:focus{outline: 2px solid #00FF66;}
+input:disabled{opacity: 0.5;}
+
+/* Structural */
+li:first-child{font-weight: bold;}
+li:last-child{border: solid 1px red;}
+tr:nth-child(even){background: #0066FF;}
+tr:nth-child(odd){background: #00FF66;}
+p:nth-of-type(2){color: brown;}
+
+/*form states*/
+input:valid{border-color: green;}
+input:invalid{border-bottom-color: red;}
+input:required{border-left: 2px solid red;}
+
+/*Transition*/
+.button{
+    background: #333;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    background: var(--primary);
+    color: #0A0A0A;
+    transform: scale(1.05);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+
+fieldset  a{
+    display: block;
+}
+
+
+
+/* 
+===============================
+RESPONSIVE DESIGN
+===============================
+ */
+
+/*Mobile First Approach*/
+@media screen and(min-width: 400px){
+
+.container{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.nav-links ul{
+    display: flex;
+    flex-direction: column;
+}
+}
+/* Tablet */
+@media screen and(min-width: 768px){
+    .container{
+        padding: 2rem;
+        max-width: 720px;
+    }
+    .nav-links ul{
+    display: flex;
+    flex-direction: column;
+}
+}
+
+/* Deskop */
+@media screen and(min-width: 1024px){
+    .container{
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+/* Large Desktop */
+@media screen and(min-width: 1280px){
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

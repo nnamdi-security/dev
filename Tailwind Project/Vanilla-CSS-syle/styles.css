@@ -1,0 +1,169 @@
+:root {
+    --dark-blue:  #0f172a ;
+    --blue-shade:  #152032;
+    --light-blue:  #3b82f6 ;
+    --purple:  #a855f7 ;
+    --Green:  #22c55e;
+}
+
+*, *::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+
+}
+
+body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--dark-blue);
+    color: white;
+    line-height: 1.75;
+    min-height: 100vh;
+    
+    
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1, h2, h3{
+    font-family: 'Georgia', 'Times New Roman', serif;  
+    font-weight: 700;
+    line-height: 1.2; 
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-flex{
+    display: flex;
+    gap: 1rem;
+}
+ .nav-logo{
+    background-color: #3b82f6;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    text-align: center;
+ }
+
+.nav-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-btn{
+    background: var(--light-blue);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.logo-word{
+    font-weight: bolder;
+}
+
+/* Navigation with logo on the left and links on the right */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divider{
+    border-bottom: 1px solid gray;
+    margin: 10px 0;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-flex{
+    
+    min-height: 92vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.h1-third-word{ color: var(--light-blue);}
+
+.hero-btn1{
+    background: var(--light-blue);
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 15px;
+}
+
+.hero-btn2{
+    border: 1px solid grey;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-left: 5px;
+}
+
+.service{
+    background-color: var(--blue-shade);
+}
+.service h2, p{
+    text-align: center;
+}
+
+
+/* Equal width cards */
+.card-flex {
+    display: flex;
+    flex: 1 1 300px;
+    min-width: 0;      /* This prevent overflow */
+    gap: 1rem;
+}
+
+.card__image{
+   font-size: 50px;
+    margin: 20px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.image1{background-color: var(--light-blue);}
+.image2{background: var(--Green);}
+.image3{background: var(--purple);}
+
+
+.card{
+    border: 0.5px solid grey;
+}
+
+/* Sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+}
+
+

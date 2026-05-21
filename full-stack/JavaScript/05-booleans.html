@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Truthy and Falsy Value
+        // Falsy values (evaluate to false)
+       // false, 0 '', undefined, NaN
+
+        //Everything else is truthy
+
+      /*  if(5) {
+            console.log('truthy')
+            //truthy
+        }
+        //Use case
+        const cartQuantity = 5;
+
+        if(cartQuantity) {
+            console.log('cart has products');
+        }
+
+        console.log(!0); // true
+
+        console.log('text' / 5); // NaN
+
+        let variable1;
+        console.log(variable1); // undefined
+
+        //Ternary Operator ?
+         true ? 'truthy' : 'falsy'; // This can be assigned to a variable
+         const result = true ? 'truthy' : 'falsy';
+         console.log(result);
+*/
+         //Guard Operator &&. short circuit evaluation
+         false && console.log('hello'); //  This code will not run
+         const message = 5 && 'hello'; 
+         console.log(message); // This will return 'hello'
+
+         //Default Operator ||
+         const currency = 'EUR' || 'USD';
+         console.log(currency); // EUR
+
+         //const currency = undefined || 'USD';
+         console.log(currency); // USD
+    </script>
+</body>
+</html>
