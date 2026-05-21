@@ -6,11 +6,101 @@
     --Green:  #22c55e;
 }
 
+*, *::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+
+}
+
+body{
+    
+    color: black;
+    line-height: 1.75;
+    min-height: 100vh;
+    
+    
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-flex{
+    display: flex;
+    gap: 1rem;
+}
+ .nav-logo{
+    background-color: #3b82f6;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    text-align: center;
+ }
+
+.nav-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-btn{
+    background: var(--light-blue);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.logo-word{
+    font-weight: bolder;
+}
+
 /* Navigation with logo on the left and links on the right */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.divider{
+    border-bottom: 1px solid gray;
+    margin: 10px 0;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.hero{
+    background-color: var(--dark-blue);
+}
+
+.hero-flex{
+    
+    min-height: 92vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1{
+    font-size: 50px;
 }
 
 /* Equal width cards */
@@ -28,32 +118,33 @@ body {
 main{
     flex: 1;
 }
-
+/*
 /* Mobile first approach */
 body {
     padding: 1rem;
+    margin: 0 auto;
 }
 /* Tablet */
 @media screen and (min-width: 768px) {
     body {
         padding: 2rem;
         max-width: 720px;
+        margin: 0 auto;
     }
 }
 /* Desktop */
 @media screen and (min-width: 1024px) {
     body {
         max-width: 960px;
+        margin: 0 auto;
     }
 }
 
 /* Large Desktop */
-@media screen and (min-width: 1280) {
+@media screen and (min-width: 1280px) {
     body {
         max-width: 1200px;
+        margin: 0 auto;
     }
 }
-
-h1{
-    color: var(--light-blue);
-}
+*/
